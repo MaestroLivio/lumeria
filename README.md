@@ -9,9 +9,11 @@ tutte si apre la **Stella delle Possibilità**.
 
 - Motore: **Godot 4.7.2** (Forward+)
 - Lingua: **italiano**
-- Modalità: **offline**, nessun account, nessuna pubblicità, nessun tracciamento
+- Modalità: **offline**, nessun account, nessuna pubblicità, nessun tracciamento;
+  l’unica connessione opzionale è il controllo aggiornamenti (disattivabile)
 - Input: **gamepad prima di tutto**, ma tastiera e mouse funzionano sempre
 - Avvio: **finestra ridimensionabile 1280×720** (minimo 960×540)
+- Versione corrente: **1.1.0**
 
 ## Scarica
 
@@ -184,8 +186,8 @@ Il menu **Impostazioni** è completo e navigabile solo con il gamepad.
   inquadrato)
 - **Comandi** — zona morta, vibrazione, solo D-pad, simboli del controller,
   test interattivo del gamepad
-- **Gioco** — percorso suggerito, modalità classe, tutorial, azzeramento
-  progressi con doppia conferma
+- **Gioco** — percorso suggerito, modalità classe, tutorial, controllo
+  aggiornamenti online, azzeramento progressi con doppia conferma
 - **Docente** — riepilogo locale, esportazione/importazione dei progressi,
   azzeramento protetto
 
@@ -209,7 +211,9 @@ Le modifiche si applicano subito e restano salvate sul dispositivo. Il pulsante
 - Alto contrasto, testo ingrandibile, contorni spessi, riduzione del movimento,
   niente flash.
 - Aiuti senza penalità e senza limite di tentativi.
-- Nessuna connessione, nessun account, nessuna telemetria, nessuna pubblicità.
+- Nessun account, nessuna telemetria, nessuna pubblicità. L’unica richiesta di
+  rete è il controllo aggiornamenti: legge un piccolo file JSON pubblico e non
+  invia dati personali. Si può disattivare da *Impostazioni → Gioco*.
 - I dati restano in `~/Library/Application Support/Godot/app_userdata/Lumeria/`
   (versione editor) o nella cartella dati dell'app esportata.
 
@@ -220,7 +224,7 @@ Le modifiche si applicano subito e restano salvate sul dispositivo. Il pulsante
 ```
 scenes/main.tscn                 scena di avvio (unica scena scritta a mano)
 scripts/main.gd                  orchestrazione, viaggio rapido, modalità test
-scripts/core/                    impostazioni, salvataggio, audio e voce
+scripts/core/                    impostazioni, salvataggio, audio, voce e aggiornamenti
 scripts/data/mission_data.gd     catalogo completo delle 100 missioni
 scripts/missions/                tavolo 3D, cubi, incastri, valutatore
 scripts/world/                   mondo, giocatore, camera, stazioni, avatar, custodi
@@ -239,6 +243,7 @@ tests/mission_shots.gd           catture prima/dopo di singole missioni
 tests/asset_gallery.gd           galleria di controllo dei modelli .glb
 tests/avatar_portrait.gd         ritratti di controllo dell'avatar (viso, schiena)
 screenshots/                     catture di verifica (23 immagini)
+version.json                     ultima versione e URL dei pacchetti per l'updater
 export_presets.cfg               preset macOS, Windows, Linux x86_64/ARM64
 LICENSE                          licenza CC BY 4.0 del progetto
 NOTICE                           copyright e attribuzione
@@ -449,6 +454,29 @@ tools/make_distributions.sh
 Lo script esporta tutte le piattaforme, firma il bundle macOS fuori da iCloud e
 crea `Lumeria-macOS.zip`, `Lumeria-Windows.zip`, `Lumeria-Linux.tar.gz`,
 `Lumeria-Linux-ARM64.tar.gz` e `Lumeria-ChromeOS.zip` in `build/`.
+
+---
+
+## Aggiornamenti
+
+All’avvio, se il controllo è attivo, Lumeria legge
+[`version.json`](version.json) dal repository e confronta la versione con quella
+installata. Se ne esiste una più recente mostra una richiesta con **Aggiorna
+ora** / **Più tardi**; il controllo non blocca l’avvio e in assenza di rete non
+mostra errori.
+
+- **Aggiorna ora** scarica il pacchetto della piattaforma nella cartella
+  `Download/Lumeria`, verifica lo `SHA256SUMS` della release, estrae i file e
+  avvia un piccolo programma di installazione.
+- L’installer aspetta la chiusura del gioco, sostituisce i file nella cartella
+  corrente e riapre Lumeria. Se la cartella non è scrivibile (per esempio
+  `/Applications` senza permessi), apre la nuova copia dai Download.
+- **Più tardi** chiude la richiesta per questa sessione. Il controllo si può
+  disattivare o ripetere subito da *Impostazioni → Gioco → Controlla
+  aggiornamenti online / Controlla ora*.
+- Le release devono mantenere i nomi degli asset usati da `version.json`:
+  `Lumeria-macOS.zip`, `Lumeria-Windows.zip`, `Lumeria-Linux.tar.gz`,
+  `Lumeria-Linux-ARM64.tar.gz`, `Lumeria-ChromeOS.zip` e `SHA256SUMS`.
 
 ---
 

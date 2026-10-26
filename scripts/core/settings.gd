@@ -39,6 +39,7 @@ const DEFAULTS := {
 	"progression_guided": false,
 	"classroom_mode": false,
 	"tutorial_done": false,
+	"check_updates": true,
 }
 
 var data: Dictionary = {}

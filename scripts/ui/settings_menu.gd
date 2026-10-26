@@ -285,11 +285,17 @@ func _build_game() -> void:
 	var s := _section("Gioco", "Tutte le regioni sono sempre esplorabili. Le missioni si possono rigiocare in qualsiasi momento.")
 	_toggle(s, "progression_guided", "Percorso suggerito")
 	_toggle(s, "classroom_mode", "Modalità classe")
+	_toggle(s, "check_updates", "Controlla aggiornamenti online")
+	s.add_child(UIKit.body("All'avvio il gioco può chiedere a GitHub se esiste una nuova versione. Non invia dati personali; puoi disattivare il controllo.", 16))
 	var tutorial := UIKit.button("Rivedi il tutorial", "", 50)
 	tutorial.pressed.connect(func() -> void:
 		Audio.play_sfx("click")
 		tutorial_requested.emit())
-	_button_row(s, [tutorial])
+	var update := UIKit.button("Controlla ora", "", 50)
+	update.pressed.connect(func() -> void:
+		Audio.play_sfx("click")
+		Updater.check_now(true))
+	_button_row(s, [tutorial, update])
 	s.add_child(UIKit.body("Il tutorial mostra movimento, camera, interazione, diario e pausa in cinque piccoli passi.", 16))
 	var info := _section("Il mio viaggio", "Riepilogo locale, senza nomi né dati personali.")
 	info.add_child(UIKit.body("Pietre magiche accese: %d su 100\nLucciole incontrate: %d\nCreature accarezzate: %d\nPietre musicali: %d" % [
