@@ -1,5 +1,15 @@
 # Licenze di terze parti
 
+## Licenza del progetto
+
+Il contenuto originale di **Lumeria** (codice, testi, grafica procedurale e
+materiali prodotti per il progetto) è distribuito con licenza
+**Creative Commons Attribution 4.0 International (CC BY 4.0)**: vedi
+[`LICENSE`](LICENSE).
+
+Le componenti elencate qui sotto restano soggette alle rispettive licenze e non
+sono coperte dalla CC BY 4.0 del progetto.
+
 ## Voci neurali — teacher-in-the-loop / Kokoro-82M
 
 La banca vocale in `assets/voices/` è stata generata con **teacher-in-the-loop**

@@ -1,5 +1,7 @@
 # Lumeria — Le cento pietre magiche del sapere
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 Gioco educativo 3D in italiano per bambini di **5–7 anni**. Si esplora un mondo
 low-poly colorato, senza combattimenti, timer o penalità, e si risolvono **100
 missioni** divise in **10 regioni**. Ogni missione accende una pietra magica; completandole
@@ -484,6 +486,23 @@ Le immagini in `screenshots/` coprono menu, impostazioni (1280×720 e 960×540),
 mondo, regione, missioni rappresentative, vittoria, mappa, diario, guardaroba,
 tutorial, finale, pausa, pannello docente, laboratorio e le missioni con vetrina
 o percorso.
+
+---
+
+## Licenza
+
+Il progetto è distribuito con licenza **Creative Commons Attribution 4.0
+International (CC BY 4.0)**: puoi condividerlo, modificarlo e usarlo anche
+commercialmente, citando l'autore.
+
+Attribuzione consigliata:
+
+> “Lumeria” di MaestroLivio — https://github.com/MaestroLivio/lumeria —
+> licenza CC BY 4.0.
+
+Il testo completo della licenza è in [`LICENSE`](LICENSE). Le componenti di
+terze parti mantengono le proprie licenze: le voci neurali sono Apache-2.0, il
+motore Godot è MIT. Dettagli in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 ---
 
