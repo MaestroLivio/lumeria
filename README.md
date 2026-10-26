@@ -478,6 +478,18 @@ mostra errori.
   `Lumeria-macOS.zip`, `Lumeria-Windows.zip`, `Lumeria-Linux.tar.gz`,
   `Lumeria-Linux-ARM64.tar.gz`, `Lumeria-ChromeOS.zip` e `SHA256SUMS`.
 
+### Pubblicare un aggiornamento
+
+1. Aggiorna `config/version` in `project.godot` e le versioni in
+   `export_presets.cfg`.
+2. Esegui `tools/make_distributions.sh` e carica gli archivi nella nuova release
+   GitHub insieme a `SHA256SUMS`.
+3. Aggiorna `version.json` con la nuova versione, gli URL degli asset e quello
+   dei checksum, poi fai il push su `main`.
+4. Da quel momento le versioni precedenti ricevono la notifica al prossimo
+   avvio. La release stessa deve contenere il codice dell'updater e lo stesso
+   `version.json`.
+
 ---
 
 ## Grafica
