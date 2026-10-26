@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Lumeria
+Comment=Le cento pietre magiche del sapere
+Exec=sh -c 'cd "$HOME/Lumeria" && exec ./Lumeria.x86_64'
+Icon=applications-games
+Terminal=false
+Categories=Education;Game;

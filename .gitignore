@@ -1,0 +1,23 @@
+# Godot
+.godot/
+.import/
+export.cfg
+export_credentials.cfg
+
+# Build e archivi distribuibili
+build/
+*.zip
+*.tar.gz
+*.pck
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# File temporanei
+*.tmp
+*.temp
+*~
+.venv*/
+venv/

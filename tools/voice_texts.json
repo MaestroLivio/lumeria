@@ -1,0 +1,2215 @@
+{
+  "custodian_lines": [
+    "Guarda! Le forme si sono mescolate. Aiutami a ritrovare le somiglianze!",
+    "Il vento non sa più dove andare. Mettiamo in ordine le sue indicazioni!",
+    "Ogni seme aspetta il suo numero. Li contiamo insieme?",
+    "I vagoni aspettano il numero giusto. Troviamo il loro ordine!",
+    "Le macchine amano mettere insieme e togliere. Proviamo con le stelle!",
+    "Un ponte può essere corto o lungo. Scopriamo come confrontarlo!",
+    "Ascolta: ogni suono ha un simbolo. Metti il cubo sulla campana!",
+    "Le parole hanno piccoli battiti. Ritroviamo le sillabe!",
+    "La città cerca le sue insegne. Con i cubi possiamo ricostruirle!",
+    "Ogni scoperta che hai fatto può aiutarti qui. Accendiamo la Stella!"
+  ],
+  "custodians": [
+    "Lino",
+    "Ora",
+    "Pina",
+    "Tiko",
+    "Fero",
+    "Milla",
+    "Eco",
+    "Sila",
+    "Bibi",
+    "Astra"
+  ],
+  "missions": [
+    {
+      "cubes": [
+        "Fiore rosso",
+        "Fiore rosso",
+        "Fiore rosso",
+        "Fiore blu",
+        "Fiore blu",
+        "Fiore blu",
+        "Fiore giallo",
+        "Fiore giallo",
+        "Fiore giallo"
+      ],
+      "hints": [
+        "Guarda il colore del fiore e il colore dell'aiuola.",
+        "I fiori rossi stanno tutti insieme, i blu insieme, i gialli insieme.",
+        "Prendi un fiore rosso e portalo all'aiuola rossa. Poi continua con gli altri."
+      ],
+      "id": "001",
+      "instruction": "Metti ogni fiore nell'aiuola del suo colore.",
+      "sockets": [],
+      "success": "Hai riunito i fiori dello stesso colore: tre, tre e tre!",
+      "title": "La porta dei tre colori"
+    },
+    {
+      "cubes": [
+        "Cerchio rosso",
+        "Cerchio blu",
+        "Quadrato giallo",
+        "Quadrato verde",
+        "Triangolo viola",
+        "Triangolo arancio"
+      ],
+      "hints": [
+        "Guarda la forma disegnata sulla casetta.",
+        "Il colore non conta: conta la forma.",
+        "Metti i due cerchi nella casa del cerchio, i due quadrati nella casa del quadrato e i due triangoli nella casa del triangolo."
+      ],
+      "id": "002",
+      "instruction": "Ogni casetta vuole due forme uguali. Guarda la forma, non il colore.",
+      "sockets": [],
+      "success": "Le case hanno le loro finestre: due cerchi, due quadrati, due triangoli!",
+      "title": "Le case delle forme"
+    },
+    {
+      "cubes": [
+        "Stella verde a cinque punte",
+        "Stella blu",
+        "Stella verde a quattro punte",
+        "Fiore verde",
+        "Stella gialla"
+      ],
+      "hints": [
+        "Guarda bene il cubo modello: forma e colore.",
+        "Cerca una stella verde con cinque punte.",
+        "La stella verde a cinque punte è il gemello: mettila sul piedistallo COPIA."
+      ],
+      "id": "003",
+      "instruction": "Trova il gemello del cubo modello: stessa figura e stesso colore.",
+      "sockets": [
+        "COPIA"
+      ],
+      "success": "Stessa forma, stesso colore: hai trovato il gemello!",
+      "title": "Il gemello nascosto"
+    },
+    {
+      "cubes": [
+        "Foglia verde",
+        "Foglia gialla",
+        "Foglia arancio",
+        "Conchiglia"
+      ],
+      "hints": [
+        "Tre oggetti sono foglie. Uno non lo è.",
+        "Guarda la forma: la conchiglia non è una foglia.",
+        "Metti la conchiglia in DIVERSO e tutte e tre le foglie nella cesta."
+      ],
+      "id": "004",
+      "instruction": "Metti la conchiglia nella pedana DIVERSO, poi porta le tre foglie nella cesta.",
+      "sockets": [
+        "DIVERSO"
+      ],
+      "success": "La conchiglia è diversa, le foglie sono tutte insieme. Una farfalla è arrivata!",
+      "title": "Le foglie differenti"
+    },
+    {
+      "cubes": [
+        "Mela",
+        "Pera",
+        "Banana",
+        "Palla",
+        "Trottola",
+        "Trenino"
+      ],
+      "hints": [
+        "Alcuni oggetti si mangiano, altri si usano per giocare.",
+        "Mela, pera e banana sono cibo. Palla, trottola e trenino sono giochi.",
+        "Metti i tre cibi nel cesto CIBO e i tre giochi nel cesto GIOCO."
+      ],
+      "id": "005",
+      "instruction": "Metti il cibo nel cesto CIBO e i giochi nel cesto GIOCO.",
+      "sockets": [],
+      "success": "Hai diviso il cibo dai giochi: tre e tre!",
+      "title": "I due cestini"
+    },
+    {
+      "cubes": [
+        "Cerchio",
+        "Quadrato",
+        "Triangolo"
+      ],
+      "hints": [
+        "Guarda il ritmo: cerchio, quadrato, cerchio, quadrato.",
+        "Dopo un quadrato torna il cerchio.",
+        "La quinta perla è un cerchio. Mettilo nell'ultimo incastro."
+      ],
+      "id": "006",
+      "instruction": "La collana continua con un ritmo: cerchio, quadrato, cerchio, quadrato… cosa manca?",
+      "sockets": [
+        "?"
+      ],
+      "success": "Cerchio, quadrato, cerchio, quadrato, cerchio: la collana è completa!",
+      "title": "Le perle in fila"
+    },
+    {
+      "cubes": [
+        "Rosso",
+        "Blu",
+        "Giallo"
+      ],
+      "hints": [
+        "Il ritmo è rosso, blu, giallo e poi ricomincia.",
+        "Dopo il rosso e il blu arriva il giallo.",
+        "La sesta posizione vuole il giallo."
+      ],
+      "id": "007",
+      "instruction": "Il ramo segue un ritmo di tre colori: rosso, blu, giallo. Cosa viene dopo?",
+      "sockets": [
+        "?"
+      ],
+      "success": "Rosso, blu, giallo: il ramo fiorisce con il ritmo giusto!",
+      "title": "La danza delle tre foglie"
+    },
+    {
+      "cubes": [
+        "Cerchio rosso",
+        "Cerchio rosso",
+        "Cerchio blu",
+        "Cerchio blu",
+        "Quadrato rosso",
+        "Quadrato rosso",
+        "Quadrato blu",
+        "Quadrato blu"
+      ],
+      "hints": [
+        "Guarda due cose insieme: la forma e il colore.",
+        "Il cerchio rosso va con il cerchio rosso, non con il quadrato rosso.",
+        "Ci sono due cubi per ogni coppia: cerchio rosso, cerchio blu, quadrato rosso, quadrato blu."
+      ],
+      "id": "008",
+      "instruction": "Ogni pedana vuole due cubi con la stessa forma e lo stesso colore.",
+      "sockets": [],
+      "success": "Due indizi insieme: forma e colore! Quattro gruppi completi.",
+      "title": "Il tavolo dei due indizi"
+    },
+    {
+      "cubes": [
+        "Fungo piccolo",
+        "Fungo un po' più alto",
+        "Fungo medio",
+        "Fungo alto",
+        "Fungo il più alto"
+      ],
+      "hints": [
+        "Guarda l'altezza dei funghi.",
+        "Il primo posto è per il fungo più basso.",
+        "Metti i funghi in ordine: il più piccolo, poi via via i più alti."
+      ],
+      "id": "009",
+      "instruction": "Metti i funghi dal più basso al più alto.",
+      "sockets": [],
+      "success": "Dal più basso al più alto: la scalinata è cresciuta!",
+      "title": "I funghi dal più piccolo"
+    },
+    {
+      "cubes": [
+        "Cerchio rosso",
+        "Quadrato blu",
+        "Cerchio blu",
+        "Quadrato rosso",
+        "Cerchio giallo",
+        "Quadrato giallo"
+      ],
+      "hints": [
+        "La sequenza alterna cerchio rosso e quadrato blu.",
+        "Dopo il cerchio rosso arriva il quadrato blu.",
+        "Il quarto incastro vuole il quadrato blu. Poi metti un cerchio e un quadrato nei cestini."
+      ],
+      "id": "010",
+      "instruction": "Completa la sequenza e porta un cerchio e un quadrato nei due cestini.",
+      "sockets": [
+        "?",
+        "CERCHIO",
+        "QUADRATO"
+      ],
+      "success": "Sequenza e cestini: la prima Radice della Chiarezza si accende!",
+      "title": "La radice maestra"
+    },
+    {
+      "cubes": [
+        "Sole",
+        "Luna"
+      ],
+      "hints": [
+        "La freccia sul terreno indica il davanti.",
+        "Il sole sta dove punta la freccia, la luna dalla parte opposta.",
+        "Metti il sole in DAVANTI e la luna in DIETRO."
+      ],
+      "id": "011",
+      "instruction": "Metti il sole davanti alla fontana e la luna dietro.",
+      "sockets": [
+        "DAVANTI",
+        "DIETRO"
+      ],
+      "success": "Davanti e dietro: la ruota del vento comincia a girare!",
+      "title": "Davanti alla fontana"
+    },
+    {
+      "cubes": [
+        "Mano",
+        "Piede"
+      ],
+      "hints": [
+        "Guarda il guanto rosso: è sulla mano destra del pupazzo.",
+        "Il cubo MANO va dal lato del guanto rosso.",
+        "Mano a destra, piede a sinistra."
+      ],
+      "id": "012",
+      "instruction": "Il pupazzo ha il guanto rosso sulla sua mano destra. Metti la mano a destra e il piede a sinistra.",
+      "sockets": [
+        "DESTRA",
+        "SINISTRA"
+      ],
+      "success": "Il ponte ha i suoi due lati: una campana risuona!",
+      "title": "I lati del ponte"
+    },
+    {
+      "cubes": [
+        "Uccello",
+        "Talpa"
+      ],
+      "hints": [
+        "L'uccello vola in alto. La talpa scava in basso.",
+        "La mensola alta è per l'uccello.",
+        "Uccello SOPRA, talpa SOTTO."
+      ],
+      "id": "013",
+      "instruction": "Metti l'uccello sulla mensola SOPRA e la talpa in quella SOTTO.",
+      "sockets": [
+        "SOPRA",
+        "SOTTO"
+      ],
+      "success": "L'uccello in alto, la talpa in basso: il passaggio si apre!",
+      "title": "Sopra e sotto"
+    },
+    {
+      "cubes": [
+        "Pecora",
+        "Aquilone"
+      ],
+      "hints": [
+        "DENTRO significa dentro il recinto. FUORI significa fuori.",
+        "La pecora resta nel prato chiuso.",
+        "Pecora DENTRO, aquilone FUORI."
+      ],
+      "id": "014",
+      "instruction": "Metti la pecora DENTRO il recinto e l'aquilone FUORI.",
+      "sockets": [
+        "DENTRO",
+        "FUORI"
+      ],
+      "success": "La pecora è al sicuro dentro, l'aquilone vola fuori. Sbocciano le margherite!",
+      "title": "Dentro o fuori?"
+    },
+    {
+      "cubes": [
+        "Candela",
+        "Nave"
+      ],
+      "hints": [
+        "Guarda dove sono i due ripiani rispetto al faro.",
+        "Il ripiano vicino è a due passi dal faro.",
+        "Candela VICINO, nave LONTANO."
+      ],
+      "id": "015",
+      "instruction": "Il faro è al centro. Metti la candela VICINO al faro e la nave LONTANO.",
+      "sockets": [
+        "VICINO",
+        "LONTANO"
+      ],
+      "success": "Il faro si accende: vicino e lontano ora si vedono bene!",
+      "title": "Vicino e lontano"
+    },
+    {
+      "cubes": [
+        "Su",
+        "Destra"
+      ],
+      "hints": [
+        "L'animaletto deve salire e poi andare a destra.",
+        "Il primo passo è SU.",
+        "Metti SU nel primo incastro e DESTRA nel secondo."
+      ],
+      "id": "016",
+      "instruction": "Guida l'animaletto alla mela: prima SU, poi DESTRA.",
+      "sockets": [],
+      "success": "Su, destra: l'animaletto ha raggiunto la mela!",
+      "title": "Il sentiero delle frecce"
+    },
+    {
+      "cubes": [
+        "Su",
+        "Su",
+        "Destra",
+        "Destra",
+        "Giù"
+      ],
+      "hints": [
+        "Il centro è chiuso: sali lungo la colonna di sinistra.",
+        "Servono due passi SU e due passi DESTRA.",
+        "Metti SU, SU, DESTRA, DESTRA."
+      ],
+      "id": "017",
+      "instruction": "Il carro deve arrivare in alto a destra senza passare dal centro chiuso. Programma quattro passi.",
+      "sockets": [],
+      "success": "Il carro del vento ha trovato la strada senza il centro!",
+      "title": "La strada che gira"
+    },
+    {
+      "cubes": [
+        "Seme",
+        "Germoglio",
+        "Fiore"
+      ],
+      "hints": [
+        "Come cresce una pianta? Prima il seme.",
+        "Il germoglio viene dopo il seme e prima del fiore.",
+        "Seme, germoglio, fiore: questo è l'ordine."
+      ],
+      "id": "018",
+      "instruction": "Metti in ordine: prima il seme, poi il germoglio, poi il fiore.",
+      "sockets": [
+        "1",
+        "2",
+        "3"
+      ],
+      "success": "Seme, germoglio, fiore: il giardino respira!",
+      "title": "Prima, durante, dopo"
+    },
+    {
+      "cubes": [
+        "Mattino",
+        "Mezzogiorno",
+        "Tramonto",
+        "Notte"
+      ],
+      "hints": [
+        "Il sole sorge al mattino.",
+        "Dopo il mattino arriva mezzogiorno, poi il tramonto.",
+        "Mattino, mezzogiorno, tramonto, notte."
+      ],
+      "id": "019",
+      "instruction": "Metti in ordine la giornata: mattino, mezzogiorno, tramonto, notte.",
+      "sockets": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "success": "Il cielo ha ritrovato il suo giro: il vento apre la rotta!",
+      "title": "Il giorno del sole"
+    },
+    {
+      "cubes": [
+        "Nuvola",
+        "Sasso",
+        "Farfalla",
+        "Su",
+        "Destra"
+      ],
+      "hints": [
+        "Tre oggetti hanno un posto. La luce ha due passi.",
+        "Nuvola in alto, sasso in basso, farfalla dentro il portale.",
+        "Nuvola SOPRA, sasso SOTTO, farfalla DENTRO; poi SU e DESTRA."
+      ],
+      "id": "020",
+      "instruction": "Metti la nuvola SOPRA, il sasso SOTTO, la farfalla DENTRO. Poi guida la luce: SU, DESTRA.",
+      "sockets": [
+        "SOPRA",
+        "SOTTO",
+        "DENTRO"
+      ],
+      "success": "Posizioni e percorso: la Bussola di Ora illumina la seconda regione!",
+      "title": "La bussola delle quattro prove"
+    },
+    {
+      "cubes": [
+        "Carota",
+        "Carota",
+        "Carota",
+        "Carota",
+        "Palla",
+        "Palla"
+      ],
+      "hints": [
+        "Ci sono quattro coniglietti e quattro carote.",
+        "Una carota per ogni casetta.",
+        "Metti una carota in ciascuna delle quattro case. Le palle non servono."
+      ],
+      "id": "021",
+      "instruction": "Ogni coniglietto vuole una carota. Metti una carota in ogni casetta.",
+      "sockets": [],
+      "success": "Una carota per ciascuno: uno, due, tre, quattro!",
+      "title": "Uno per ciascuno"
+    },
+    {
+      "cubes": [
+        "1",
+        "2",
+        "3"
+      ],
+      "hints": [
+        "Tocca ogni coccinella con gli occhi: una, due, tre.",
+        "Il numero viene dopo il due.",
+        "Ci sono tre coccinelle: metti il cubo 3."
+      ],
+      "id": "022",
+      "instruction": "Conta le coccinelle e metti il numero giusto nella pedana NUMERO.",
+      "sockets": [
+        "?"
+      ],
+      "success": "Tre coccinelle, numero tre: i fiori spuntano!",
+      "title": "Il prato del tre"
+    },
+    {
+      "cubes": [
+        "4",
+        "5",
+        "6"
+      ],
+      "hints": [
+        "Conta le campane una volta sola.",
+        "Le campane sono quattro più una.",
+        "Ci sono cinque campane: metti il cubo 5."
+      ],
+      "id": "023",
+      "instruction": "Conta le campane e metti il numero giusto.",
+      "sockets": [
+        "?"
+      ],
+      "success": "Cinque campane: risuona un accordo nella biblioteca!",
+      "title": "Le cinque campanelle"
+    },
+    {
+      "cubes": [
+        "0",
+        "2"
+      ],
+      "hints": [
+        "Guarda dentro le lanterne.",
+        "La lanterna vuota non ha nessuna lucciola: zero.",
+        "Metti 0 sulla lanterna vuota e 2 su quella con due lucciole."
+      ],
+      "id": "024",
+      "instruction": "Una lanterna è vuota, l'altra ha due lucciole. Metti 0 e 2 al posto giusto.",
+      "sockets": [],
+      "success": "Zero significa nessuna lucciola. La lanterna vuota ora emette una luce gentile!",
+      "title": "Zero lucciole"
+    },
+    {
+      "cubes": [
+        "2",
+        "4",
+        "6",
+        "3"
+      ],
+      "hints": [
+        "Conta i puntini di ogni dado.",
+        "Due puntini, quattro puntini, sei puntini.",
+        "Metti 2 sul dado con due puntini, 4 su quello con quattro, 6 su quello con sei."
+      ],
+      "id": "025",
+      "instruction": "Guarda i puntini del dado e abbina la cifra giusta. Puoi contarli!",
+      "sockets": [],
+      "success": "I dadi hanno trovato le loro cifre: tre fontane si accendono!",
+      "title": "Il dado della fortuna"
+    },
+    {
+      "cubes": [
+        "1",
+        "3",
+        "5",
+        "4"
+      ],
+      "hints": [
+        "Conta le dita alzate, una per una.",
+        "La mano con tre dita vuole il numero tre.",
+        "1 con una mano, 3 con tre dita, 5 con cinque dita."
+      ],
+      "id": "026",
+      "instruction": "Guarda quante dita sono alzate e metti la cifra corrispondente.",
+      "sockets": [],
+      "success": "Le dita e i numeri si sono incontrati: nasce l'albero delle mani!",
+      "title": "Le mani contano"
+    },
+    {
+      "cubes": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "hints": [
+        "I semi sono in due file da quattro.",
+        "Quattro più quattro fa otto.",
+        "Ci sono otto semi: metti il cubo 8."
+      ],
+      "id": "027",
+      "instruction": "Conta gli otto semi e scegli il numero giusto.",
+      "sockets": [
+        "?"
+      ],
+      "success": "Otto semi, due file da quattro: l'orto è verde!",
+      "title": "Gli otto semi"
+    },
+    {
+      "cubes": [
+        "9",
+        "10",
+        "11"
+      ],
+      "hints": [
+        "Guarda le due file da cinque.",
+        "Cinque più cinque fa dieci.",
+        "Ci sono dieci gemme: metti il cubo 10."
+      ],
+      "id": "028",
+      "instruction": "Il telaio ha due file da cinque gemme. Quante gemme ci sono?",
+      "sockets": [
+        "?"
+      ],
+      "success": "Due cinquine fanno dieci: il vaso illumina la piazza!",
+      "title": "Il vaso del dieci"
+    },
+    {
+      "cubes": [
+        "Più",
+        "Meno",
+        "Uguale"
+      ],
+      "hints": [
+        "Guarda quale gruppo ha meno oggetti.",
+        "Tre è meno di cinque. Quattro è uguale a quattro.",
+        "Prima pedana: MENO. Seconda pedana: UGUALE."
+      ],
+      "id": "029",
+      "instruction": "Confronta i gruppi: 3 mele e 5 pere, poi 4 fiori e 4 sassi.",
+      "sockets": [
+        "3  ?  5",
+        "4  ?  4"
+      ],
+      "success": "3 è meno di 5, 4 è uguale a 4: Pina apre due cassetti!",
+      "title": "Più, meno, uguale"
+    },
+    {
+      "cubes": [
+        "0",
+        "2",
+        "5",
+        "6",
+        "8",
+        "10"
+      ],
+      "hints": [
+        "Conta i semi di ogni aiuola, una aiuola alla volta.",
+        "La prima è vuota: zero. La seconda ha due semi.",
+        "0, 2, 6, 10: metti queste cifre nelle aiuole."
+      ],
+      "id": "030",
+      "instruction": "Ogni aiuola ha un colore. Conta i semi e metti la cifra giusta.",
+      "sockets": [
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "success": "Vuoto, due, sei, dieci: germoglia la Pietra Magica del Giardino!",
+      "title": "Il grande orto dei numeri"
+    },
+    {
+      "cubes": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "hints": [
+        "Il treno parte dalla locomotiva e cresce di uno.",
+        "Dopo il due viene il tre.",
+        "Uno, due, tre, quattro, cinque: questo è l'ordine."
+      ],
+      "id": "031",
+      "instruction": "La locomotiva parte per prima. Metti i vagoni in ordine da 1 a 5.",
+      "sockets": [],
+      "success": "Il trenino ha i suoi vagoni in fila: parte piano piano!",
+      "title": "Il trenino da uno a cinque"
+    },
+    {
+      "cubes": [
+        "3",
+        "6",
+        "8"
+      ],
+      "hints": [
+        "Ogni numero è uno in più del precedente.",
+        "Dopo il cinque arriva il sei.",
+        "Manca il 6: mettilo tra il 5 e il 7."
+      ],
+      "id": "032",
+      "instruction": "La fila è 4, 5, vuoto, 7. Quale numero manca?",
+      "sockets": [
+        "4",
+        "5",
+        "?",
+        "7"
+      ],
+      "success": "Il numero perduto è tornato: il treno conta quattro, cinque, sei, sette!",
+      "title": "Il numero perduto"
+    },
+    {
+      "cubes": [
+        "4",
+        "2",
+        "6"
+      ],
+      "hints": [
+        "Il treno scende: cinque, quattro, tre.",
+        "Tra il 5 e il 3 c'è il 4.",
+        "Metti il 4 nel vagone vuoto."
+      ],
+      "id": "033",
+      "instruction": "Il treno va all'indietro: 5, vuoto, 3. Quale numero manca?",
+      "sockets": [
+        "5",
+        "?",
+        "3"
+      ],
+      "success": "Cinque, quattro, tre: il binario d'argento si accende!",
+      "title": "Il binario all'indietro"
+    },
+    {
+      "cubes": [
+        "6",
+        "8",
+        "10"
+      ],
+      "hints": [
+        "Tra il 7 e il 9 c'è un numero.",
+        "Sette più uno fa otto.",
+        "Metti l'8 tra il 7 e il 9."
+      ],
+      "id": "034",
+      "instruction": "Le torri sono 7, vuoto, 9. Quale numero sta in mezzo?",
+      "sockets": [
+        "7",
+        "?",
+        "9"
+      ],
+      "success": "Il ponte si allunga: sette, otto, nove!",
+      "title": "Tra sette e nove"
+    },
+    {
+      "cubes": [
+        "Maggiore",
+        "Minore",
+        "Uguale"
+      ],
+      "hints": [
+        "Quattro è meno di sei.",
+        "Il simbolo con la punta verso sinistra si legge MENO.",
+        "Tra 4 e 6 va il simbolo minore: <."
+      ],
+      "id": "035",
+      "instruction": "Una montagna ha 4 pietre, l'altra 6. Metti il simbolo giusto tra 4 e 6.",
+      "sockets": [
+        "4  ?  6"
+      ],
+      "success": "Quattro è meno di sei: la montagna più alta risplende!",
+      "title": "Le due montagne"
+    },
+    {
+      "cubes": [
+        "Maggiore",
+        "Maggiore",
+        "Minore",
+        "Minore",
+        "Uguale",
+        "Uguale"
+      ],
+      "hints": [
+        "Otto è più di tre. Cinque è uguale a cinque.",
+        "Il simbolo con la punta verso il numero più piccolo indica il maggiore.",
+        "8 > 3 e 5 = 5."
+      ],
+      "id": "036",
+      "instruction": "Guarda i due pannelli: 8 ? 3 e 5 ? 5. Scegli i simboli.",
+      "sockets": [
+        "8  ?  3",
+        "5  ?  5"
+      ],
+      "success": "8 è maggiore di 3, 5 è uguale a 5: due semafori diventano verdi!",
+      "title": "Un altro confronto"
+    },
+    {
+      "cubes": [
+        "12",
+        "14",
+        "16",
+        "9"
+      ],
+      "hints": [
+        "La fila cresce di uno.",
+        "Dopo l'11 viene il 12.",
+        "Nel terzo vagone va 12, nel quinto va 14."
+      ],
+      "id": "037",
+      "instruction": "La fila è 10, 11, vuoto, 13, vuoto, 15. Completa i due vagoni.",
+      "sockets": [
+        "10",
+        "11",
+        "?",
+        "13",
+        "?",
+        "15"
+      ],
+      "success": "Dieci, undici, dodici, tredici, quattordici, quindici: il trenino fischia!",
+      "title": "Da dieci a quindici"
+    },
+    {
+      "cubes": [
+        "12",
+        "17",
+        "11",
+        "19"
+      ],
+      "hints": [
+        "Dieci più due fa dodici.",
+        "Dieci più sette fa diciassette.",
+        "Metti 12 con 10 + 2 e 17 con 10 + 7."
+      ],
+      "id": "038",
+      "instruction": "Un vagone ha dieci palline più due, l'altro dieci più sette. Abbina i numeri.",
+      "sockets": [
+        "10 + 2",
+        "10 + 7"
+      ],
+      "success": "Dieci e due, dieci e sette: due rotaie riemergono!",
+      "title": "Due decine in viaggio"
+    },
+    {
+      "cubes": [
+        "16",
+        "17",
+        "18",
+        "19",
+        "20"
+      ],
+      "hints": [
+        "La locomotiva indica la partenza: 16.",
+        "Ogni numero è uno in più del precedente.",
+        "16, 17, 18, 19, 20."
+      ],
+      "id": "039",
+      "instruction": "I vagoni devono andare da 16 a 20. Mettili in ordine.",
+      "sockets": [],
+      "success": "Il treno raggiunge la stazione: sedici, diciassette, diciotto, diciannove, venti!",
+      "title": "Il traguardo venti"
+    },
+    {
+      "cubes": [
+        "8",
+        "10",
+        "11",
+        "Maggiore",
+        "Minore",
+        "Uguale"
+      ],
+      "hints": [
+        "Nella fila manca il numero dopo il 7.",
+        "Dodici è meno di quindici.",
+        "Metti 8 nella fila e < nel confronto."
+      ],
+      "id": "040",
+      "instruction": "Completa la fila 6, 7, vuoto, 9 e il confronto 12 ? 15.",
+      "sockets": [
+        "6",
+        "7",
+        "?",
+        "9",
+        "12  ?  15"
+      ],
+      "success": "Sequenza e confronto: si illumina la grande Pietra Magica dei Binari!",
+      "title": "La stazione delle differenze"
+    },
+    {
+      "cubes": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "hints": [
+        "Guarda le stelle: due e una.",
+        "Due più una fa tre.",
+        "Metti 2 nel primo ingresso, 1 nel secondo e 3 all'uscita."
+      ],
+      "id": "041",
+      "instruction": "Due stelle e una stella: quante stelle in tutto? Metti i numeri nella macchina.",
+      "sockets": [
+        "2",
+        "+",
+        "1",
+        "=",
+        "?"
+      ],
+      "success": "Due più una fa tre: il primo ingranaggio si accende!",
+      "title": "La macchina che unisce"
+    },
+    {
+      "cubes": [
+        "2",
+        "2",
+        "4",
+        "3",
+        "5"
+      ],
+      "hints": [
+        "Ogni piattaforma ha due farfalle.",
+        "Due più due fa quattro.",
+        "Metti 2 e 2 negli ingressi e 4 all'uscita."
+      ],
+      "id": "042",
+      "instruction": "Due farfalle e altre due farfalle: quante farfalle insieme?",
+      "sockets": [
+        "2",
+        "+",
+        "2",
+        "=",
+        "?"
+      ],
+      "success": "Due e due fanno quattro: la macchina produce quattro ali!",
+      "title": "Due e due"
+    },
+    {
+      "cubes": [
+        "1",
+        "2",
+        "2",
+        "3",
+        "5"
+      ],
+      "hints": [
+        "Il telaio ha cinque posti e tre sono pieni.",
+        "Per arrivare a cinque mancano due gemme.",
+        "Metti 2 nello spazio mancante, poi 3 + 2 = 5."
+      ],
+      "id": "043",
+      "instruction": "Il telaio ha cinque celle e tre gemme. Quante ne mancano? Poi costruisci 3 + 2 = 5.",
+      "sockets": [
+        "?",
+        "|",
+        "3",
+        "+",
+        "2",
+        "=",
+        "?"
+      ],
+      "success": "Tre più due fa cinque: il cristallo verde si accende!",
+      "title": "Gli amici del cinque"
+    },
+    {
+      "cubes": [
+        "4",
+        "0",
+        "5",
+        "4"
+      ],
+      "hints": [
+        "Il vassoio vuoto contiene zero stelle.",
+        "Aggiungere zero non cambia la quantità.",
+        "Fai 4 + 0 = 4."
+      ],
+      "id": "044",
+      "instruction": "Quattro stelle e un vassoio vuoto: quante stelle restano? Costruisci 4 + 0 = 4.",
+      "sockets": [
+        "4",
+        "+",
+        "0",
+        "=",
+        "?"
+      ],
+      "success": "Aggiungo zero: resta quattro. Un filo di luce attraversa l'officina!",
+      "title": "Lo zero non cambia"
+    },
+    {
+      "cubes": [
+        "4",
+        "4",
+        "3",
+        "5"
+      ],
+      "hints": [
+        "Le due macchine hanno gli stessi gruppi, cambiati di posto.",
+        "Uno più tre fa quattro. Tre più uno fa quattro.",
+        "Metti un 4 in ciascuna uscita."
+      ],
+      "id": "045",
+      "instruction": "Due macchine: 1 + 3 e 3 + 1. Metti il risultato in entrambe le uscite.",
+      "sockets": [
+        "1",
+        "+",
+        "3",
+        "=",
+        "?",
+        "3",
+        "+",
+        "1",
+        "=",
+        "?"
+      ],
+      "success": "Uno più tre e tre più uno: sempre quattro! Il doppio ingranaggio gira.",
+      "title": "Lo stesso totale"
+    },
+    {
+      "cubes": [
+        "6",
+        "7",
+        "8"
+      ],
+      "hints": [
+        "Conta tutte le lucciole insieme.",
+        "Quattro più tre fa sette.",
+        "Metti 7 nel risultato."
+      ],
+      "id": "046",
+      "instruction": "Quattro lucciole e tre lucciole: quante in tutto? Metti il risultato.",
+      "sockets": [
+        "4",
+        "+",
+        "3",
+        "=",
+        "?"
+      ],
+      "success": "Quattro più tre fa sette: il laboratorio emette sette raggi!",
+      "title": "Le sette lucciole"
+    },
+    {
+      "cubes": [
+        "2",
+        "3",
+        "4"
+      ],
+      "hints": [
+        "Guarda le stelle che restano dopo che due volano via.",
+        "Togli due da cinque: restano tre.",
+        "Metti 3 nel risultato."
+      ],
+      "id": "047",
+      "instruction": "Cinque stelle, due volano via. Quante restano?",
+      "sockets": [
+        "5",
+        "-",
+        "2",
+        "=",
+        "?"
+      ],
+      "success": "Cinque meno due fa tre: il tubo dell'officina si ripara!",
+      "title": "Le stelle che vanno via"
+    },
+    {
+      "cubes": [
+        "4",
+        "5",
+        "6"
+      ],
+      "hints": [
+        "Le tre pietre sono ancora visibili nella cesta.",
+        "Cinque pietre più tre fanno otto.",
+        "Metti 5 nel risultato."
+      ],
+      "id": "048",
+      "instruction": "Otto pietre, tre attraversano il portale. Quante restano di qua?",
+      "sockets": [
+        "8",
+        "-",
+        "3",
+        "=",
+        "?"
+      ],
+      "success": "Otto meno tre fa cinque: la fontana torna a funzionare!",
+      "title": "Dove sono finite?"
+    },
+    {
+      "cubes": [
+        "4",
+        "5",
+        "6"
+      ],
+      "hints": [
+        "Unisci i biscotti dei due pacchi.",
+        "Tre più due fa cinque.",
+        "Metti 5 nel vassoio del risultato."
+      ],
+      "id": "049",
+      "instruction": "Nubi ha un pacco con 3 biscotti e uno con 2 biscotti. Quanti biscotti in tutto?",
+      "sockets": [
+        "3",
+        "+",
+        "2",
+        "=",
+        "?"
+      ],
+      "success": "Tre più due fa cinque: Nubi condivide i biscotti con gli amici!",
+      "title": "Il pacco per Nubi"
+    },
+    {
+      "cubes": [
+        "8",
+        "3",
+        "6",
+        "4"
+      ],
+      "hints": [
+        "Sei più due fa otto. Sette meno quattro fa tre.",
+        "La prima uscita vuole un numero più grande del 7.",
+        "Metti 8 nella prima uscita e 3 nella seconda."
+      ],
+      "id": "050",
+      "instruction": "Due macchine: 6 + 2 e 7 − 4. Metti i due risultati.",
+      "sockets": [
+        "6",
+        "+",
+        "2",
+        "=",
+        "?",
+        "7",
+        "-",
+        "4",
+        "=",
+        "?"
+      ],
+      "success": "Otto e tre: la Pietra Magica dell'Officina si accende!",
+      "title": "Il cuore dell'officina"
+    },
+    {
+      "cubes": [
+        "Lungo",
+        "Corto"
+      ],
+      "hints": [
+        "Le due travi partono dallo stesso punto.",
+        "La trave che arriva più lontano è lunga.",
+        "Metti LUNGO sulla trave da cinque e CORTO su quella da tre."
+      ],
+      "id": "051",
+      "instruction": "Guarda le due travi. Metti LUNGO sulla trave lunga e CORTO sulla corta.",
+      "sockets": [],
+      "success": "La trave lunga e quella corta: un ponte si distende sull'acqua!",
+      "title": "Il ponte più lungo"
+    },
+    {
+      "cubes": [
+        "Nastro corto",
+        "Nastro medio",
+        "Nastro lungo"
+      ],
+      "hints": [
+        "Confronta i nastri dalla stessa estremità.",
+        "Il nastro corto va per primo.",
+        "Corto, medio, lungo: 2, 4, 6."
+      ],
+      "id": "052",
+      "instruction": "Metti i nastri dal più corto al più lungo.",
+      "sockets": [
+        "1",
+        "2",
+        "3"
+      ],
+      "success": "Corto, medio, lungo: una bandiera si alza al vento!",
+      "title": "Tre nastri"
+    },
+    {
+      "cubes": [
+        "Alta",
+        "Bassa",
+        "Larga"
+      ],
+      "hints": [
+        "Qui guardiamo quanto sono alte, non quanto sono larghe.",
+        "La torre più alta arriva più su.",
+        "ALTA sulla torre alta, BASSA sulla torre bassa. LARGA non serve."
+      ],
+      "id": "053",
+      "instruction": "Guarda l'altezza delle torri: metti ALTA accanto alla più alta e BASSA accanto alla più bassa.",
+      "sockets": [],
+      "success": "Alta e bassa: una scala si apre nella valle!",
+      "title": "Torre alta, torre bassa"
+    },
+    {
+      "cubes": [
+        "Uguale",
+        "Diverso",
+        "Corda lunga"
+      ],
+      "hints": [
+        "Guarda le estremità delle corde.",
+        "Due corde finiscono nello stesso punto: sono uguali.",
+        "Metti = tra le due corde uguali e la corda da 6 sulla pedana DIVERSA."
+      ],
+      "id": "054",
+      "instruction": "Due corde sono lunghe uguali, una è più lunga. Metti = tra le gemelle e la corda diversa sulla pedana.",
+      "sockets": [
+        "?",
+        "DIVERSA"
+      ],
+      "success": "Le corde gemelle hanno il loro segno: il tessitore regala una corda magica!",
+      "title": "Le corde gemelle"
+    },
+    {
+      "cubes": [
+        "Mattoncino",
+        "Mattoncino",
+        "Mattoncino",
+        "Mattoncino",
+        "Mattoncino"
+      ],
+      "hints": [
+        "La tavola ha quattro sedi uguali.",
+        "Un mattoncino per ogni sede.",
+        "Metti quattro mattoncini nelle quattro sedi. Uno resta fuori."
+      ],
+      "id": "055",
+      "instruction": "La tavola è lunga quattro mattoncini. Coprila con quattro mattoncini uguali.",
+      "sockets": [],
+      "success": "Quattro mattoncini, quattro sedi: la tavola è misurata!",
+      "title": "Misura con i mattoncini"
+    },
+    {
+      "cubes": [
+        "Passo",
+        "Passo",
+        "Passo",
+        "Passo",
+        "Passo",
+        "Passo",
+        "Passo",
+        "Passo",
+        "6"
+      ],
+      "hints": [
+        "Sei sedi, sei passi.",
+        "Riempi tutte le sedi una dopo l'altra.",
+        "Usa sei impronte e metti il numero 6 nell'indicatore."
+      ],
+      "id": "056",
+      "instruction": "La strada è lunga sei passi. Copri le sei sedi e metti il numero 6.",
+      "sockets": [
+        "?"
+      ],
+      "success": "Sei passi: il ponticello sorge sopra il ruscello!",
+      "title": "La strada da sei passi"
+    },
+    {
+      "cubes": [
+        "Unità",
+        "Unità",
+        "Unità",
+        "Unità",
+        "Unità doppia",
+        "Unità doppia"
+      ],
+      "hints": [
+        "Per misurare serve sempre la stessa unità.",
+        "I cubi doppi sono più lunghi: non vanno bene qui.",
+        "Riempi le quattro sedi con quattro cubi-unità uguali."
+      ],
+      "id": "057",
+      "instruction": "Il ponte è lungo quattro unità uguali. Usa solo i cubi-unità, non quelli doppi.",
+      "sockets": [],
+      "success": "Quattro unità uguali: ora la misura è giusta! Un nuovo ponte si attiva.",
+      "title": "Il righello dei giganti"
+    },
+    {
+      "cubes": [
+        "Più pieno",
+        "Meno pieno"
+      ],
+      "hints": [
+        "Guarda il livello del liquido nei barattoli.",
+        "Il barattolo con il liquido più alto è più pieno.",
+        "PIÙ PIENO sul barattolo pieno, MENO PIENO sull'altro."
+      ],
+      "id": "058",
+      "instruction": "Guarda i due barattoli: uno ha più liquido. Metti PIÙ PIENO e MENO PIENO.",
+      "sockets": [],
+      "success": "Il livello dell'acqua è chiaro: la fontana zampilla!",
+      "title": "I barattoli pieni"
+    },
+    {
+      "cubes": [
+        "Pesante",
+        "Leggero"
+      ],
+      "hints": [
+        "Il piatto che va più in basso contiene il peso maggiore.",
+        "Non guardare la grandezza: guarda la bilancia.",
+        "PESANTE sul piatto basso, LEGGERO su quello alto."
+      ],
+      "id": "059",
+      "instruction": "Guarda la bilancia: un piatto è più basso. Metti PESANTE e LEGGERO.",
+      "sockets": [],
+      "success": "La bilancia ha deciso: Milla alza la sua bandierina!",
+      "title": "La bilancia equilibrata"
+    },
+    {
+      "cubes": [
+        "Corda corta",
+        "Corda media",
+        "Corda lunga",
+        "Unità",
+        "Unità",
+        "Unità",
+        "Unità"
+      ],
+      "hints": [
+        "Prima ordina le tre corde, poi misura la tavola.",
+        "Le corde vanno 2, 3, 5.",
+        "Corda corta, media, lunga; poi quattro unità nelle quattro sedi."
+      ],
+      "id": "060",
+      "instruction": "Ordina le corde dalla più corta alla più lunga e copri la tavola con quattro unità.",
+      "sockets": [
+        "1",
+        "2",
+        "3"
+      ],
+      "success": "Ordine e misura: la Pietra Magica delle Misure illumina la valle!",
+      "title": "Il mercato delle misure"
+    },
+    {
+      "cubes": [
+        "A",
+        "E",
+        "O"
+      ],
+      "hints": [
+        "Ascolta bene: la campana canta /a/.",
+        "A è la prima lettera. La bocca si apre: aaaa.",
+        "Metti il cubo A sulla campana illuminata."
+      ],
+      "id": "061",
+      "instruction": "Ascolta la campana: fa /a/. Metti il cubo A sulla campana che suona.",
+      "sockets": [
+        "A"
+      ],
+      "success": "La campana ha ritrovato la sua voce: A!",
+      "title": "La campana che fa A"
+    },
+    {
+      "cubes": [
+        "E",
+        "I",
+        "O",
+        "U",
+        "A"
+      ],
+      "hints": [
+        "Ogni campana ha un suono diverso.",
+        "Ascolta una campana alla volta e ripeti il suono.",
+        "E con /e/, I con /i/, O con /o/, U con /u/. A non serve."
+      ],
+      "id": "062",
+      "instruction": "Quattro campane cantano /e/, /i/, /o/, /u/. Metti ogni vocale sulla sua campana.",
+      "sockets": [
+        "E",
+        "I",
+        "O",
+        "U"
+      ],
+      "success": "Quattro campane, quattro voci: la biblioteca canta!",
+      "title": "Le altre vocali"
+    },
+    {
+      "cubes": [
+        "M",
+        "P"
+      ],
+      "hints": [
+        "Il primo portale fa /m/, come l'inizio di MANO.",
+        "Il secondo portale fa /p/, come l'inizio di PANE.",
+        "M nella porta /m/, P nella porta /p/."
+      ],
+      "id": "063",
+      "instruction": "Due portali pronunciano /m/ e /p/. Metti M nel portale /m/ e P nel portale /p/.",
+      "sockets": [
+        "/m/",
+        "/p/"
+      ],
+      "success": "Le porte si aprono: /m/ e /p/ hanno la loro lettera!",
+      "title": "La lettera che ascolto"
+    },
+    {
+      "cubes": [
+        "M",
+        "P",
+        "S"
+      ],
+      "hints": [
+        "Ascolta l'inizio di MARE: mmm.",
+        "La prima lettera ha le labbra chiuse: M.",
+        "Metti M nel primo incastro. Poi la parola è MARE."
+      ],
+      "id": "064",
+      "instruction": "Eco dice MARE. Quale lettera senti all'inizio? Completa la parola.",
+      "sockets": [
+        "?",
+        "A",
+        "R",
+        "E"
+      ],
+      "success": "MARE! La conchiglia sonora torna a cantare.",
+      "title": "L'eco di MARE"
+    },
+    {
+      "cubes": [
+        "L",
+        "S",
+        "T"
+      ],
+      "hints": [
+        "Ascolta l'inizio: ssss come un serpente.",
+        "SOLE comincia con S.",
+        "Metti S nel primo incastro."
+      ],
+      "id": "065",
+      "instruction": "Ascolta SOLE. Quale lettera inizia la parola?",
+      "sockets": [
+        "?",
+        "O",
+        "L",
+        "E"
+      ],
+      "success": "SOLE splende: la biblioteca si riempie di luce.",
+      "title": "L'eco di SOLE"
+    },
+    {
+      "cubes": [
+        "Mano",
+        "Mela",
+        "Sole",
+        "Cane"
+      ],
+      "hints": [
+        "Ascolta l'inizio di MANO: mmm.",
+        "MELA comincia con lo stesso suono: mmm.",
+        "Metti MELA accanto a MANO. SOLE e CANE restano al banco."
+      ],
+      "id": "066",
+      "instruction": "MANO comincia con /m/. Quale altra parola comincia con /m/?",
+      "sockets": [
+        "MANO",
+        "?"
+      ],
+      "success": "MANO e MELA: due parole che iniziano uguale!",
+      "title": "Voci che iniziano uguale"
+    },
+    {
+      "cubes": [
+        "Cane",
+        "Mare",
+        "Luna"
+      ],
+      "hints": [
+        "PANE e CANE finiscono con lo stesso suono: -ane.",
+        "Ascolta la coda: pa-NE, ca-NE.",
+        "Metti CANE accanto a PANE."
+      ],
+      "id": "067",
+      "instruction": "Eco dice PANE. Quale parola finisce con lo stesso suono?",
+      "sockets": [
+        "PANE"
+      ],
+      "success": "PANE e CANE: la rima fa cantare il gufo!",
+      "title": "La coda delle parole"
+    },
+    {
+      "cubes": [
+        "Sole",
+        "Farfalla"
+      ],
+      "hints": [
+        "Batti le mani mentre dici la parola.",
+        "SO-LE: due battiti. FAR-FAL-LA: tre battiti.",
+        "SOLE sui due battiti, FARFALLA sui tre battiti."
+      ],
+      "id": "068",
+      "instruction": "SOLE ha due battiti, FARFALLA ne ha tre. Porta le parole sulla pedana giusta.",
+      "sockets": [
+        "DUE BATTITI",
+        "TRE BATTITI"
+      ],
+      "success": "Due battiti, tre battiti: il tamburo riparte!",
+      "title": "Le parole corte e lunghe"
+    },
+    {
+      "cubes": [
+        "A",
+        "E",
+        "I",
+        "O",
+        "U"
+      ],
+      "hints": [
+        "Il coro canta sempre nello stesso ordine.",
+        "Prima A, poi E, poi I.",
+        "A, E, I, O, U: cinque vocali in fila."
+      ],
+      "id": "069",
+      "instruction": "Ascolta il coro: A, E, I, O, U. Metti le vocali nell'ordine giusto.",
+      "sockets": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "success": "Le cinque vocali cantano insieme: il coro della biblioteca è nato!",
+      "title": "Cinque vocali in coro"
+    },
+    {
+      "cubes": [
+        "A",
+        "O",
+        "U",
+        "E",
+        "I"
+      ],
+      "hints": [
+        "Ascolta l'inizio di ogni parola.",
+        "APE comincia con A, OCA con O, UVA con U.",
+        "A sul libro dell'ape, O su quello dell'oca, U su quello dell'uva."
+      ],
+      "id": "070",
+      "instruction": "Tre libri mostrano APE, OCA, UVA. Metti la vocale iniziale giusta su ogni libro.",
+      "sockets": [
+        "APE",
+        "OCA",
+        "UVA"
+      ],
+      "success": "APE, OCA, UVA: la Pietra Magica dei Suoni si accende!",
+      "title": "Il libro delle prime lettere"
+    },
+    {
+      "cubes": [
+        "Lu",
+        "Na",
+        "Ma"
+      ],
+      "hints": [
+        "Batti due volte: LU-NA.",
+        "La prima pala vuole LU, la seconda NA.",
+        "LU poi NA: si legge LUNA."
+      ],
+      "id": "071",
+      "instruction": "Sila dice LU-NA. Metti le due sillabe sulle pale del mulino, in ordine.",
+      "sockets": [
+        "1",
+        "2"
+      ],
+      "success": "LU-NA: la luna illumina il mulino!",
+      "title": "Il battito di LUNA"
+    },
+    {
+      "cubes": [
+        "Pa",
+        "Ne",
+        "La"
+      ],
+      "hints": [
+        "Ascolta: PA-NE.",
+        "Prima PA, poi NE.",
+        "PA nel primo incastro, NE nel secondo. È PANE!"
+      ],
+      "id": "072",
+      "instruction": "Guarda il pane. Metti PA e NE nei due incastri, in ordine.",
+      "sockets": [
+        "1",
+        "2"
+      ],
+      "success": "PA-NE: il forno si accende e il pane profuma!",
+      "title": "La parola PANE"
+    },
+    {
+      "cubes": [
+        "So",
+        "Le",
+        "Me"
+      ],
+      "hints": [
+        "Ascolta: SO-LE.",
+        "La prima sillaba è SO, non ME.",
+        "SO poi LE: il sole splende."
+      ],
+      "id": "073",
+      "instruction": "SOLE si divide in SO-LE. Scegli le due sillabe giuste.",
+      "sockets": [
+        "1",
+        "2"
+      ],
+      "success": "SO-LE: un girasole sboccia davanti al mulino!",
+      "title": "Il sole delle sillabe"
+    },
+    {
+      "cubes": [
+        "Ca",
+        "Sa",
+        "Ma"
+      ],
+      "hints": [
+        "Ascolta: CA-SA.",
+        "La casa si divide in due metà: CA e SA.",
+        "CA nel primo incastro, SA nel secondo. È CASA!"
+      ],
+      "id": "074",
+      "instruction": "La casetta ha due incastri. Metti CA e SA nell'ordine giusto.",
+      "sockets": [
+        "1",
+        "2"
+      ],
+      "success": "CA-SA: si apre una finestra sul colle!",
+      "title": "La casa sul colle"
+    },
+    {
+      "cubes": [
+        "To",
+        "Po",
+        "Pa"
+      ],
+      "hints": [
+        "Ascolta: TO-PO.",
+        "Il primo vagone è TO.",
+        "TO poi PO: il topolino sale a bordo!"
+      ],
+      "id": "075",
+      "instruction": "Il topolino vuole due vagoni: TO e PO. Mettili in ordine.",
+      "sockets": [
+        "1",
+        "2"
+      ],
+      "success": "TO-PO: il trenino fischia e parte!",
+      "title": "Un treno chiamato TOPO"
+    },
+    {
+      "cubes": [
+        "Na",
+        "Ve",
+        "Ne",
+        "Ma"
+      ],
+      "hints": [
+        "Ascolta bene la prima sillaba: NA.",
+        "La seconda sillaba è VE, non NE.",
+        "NA poi VE: si legge NAVE."
+      ],
+      "id": "076",
+      "instruction": "Sila dice NA-VE. Metti NA e VE nei due incastri; NE è un distrattore.",
+      "sockets": [
+        "1",
+        "2"
+      ],
+      "success": "NA-VE: il veliero salpa dal porto!",
+      "title": "La nave nel porto"
+    },
+    {
+      "cubes": [
+        "Ma",
+        "Me",
+        "Mi",
+        "Mo"
+      ],
+      "hints": [
+        "La M resta uguale, cambia la vocale.",
+        "MA, ME, MI: ascolta la vocale finale.",
+        "MA con MA, ME con ME, MI con MI. MO non serve."
+      ],
+      "id": "077",
+      "instruction": "Tre campane suonano MA, ME, MI. Metti ogni sillaba sulla campana che la canta.",
+      "sockets": [
+        "MA",
+        "ME",
+        "MI"
+      ],
+      "success": "MA, ME, MI: tre molle fanno girare il mulino!",
+      "title": "Il mondo delle MA"
+    },
+    {
+      "cubes": [
+        "Ma",
+        "Me",
+        "Mo"
+      ],
+      "hints": [
+        "Ascolta il primo battito di MARE: MA.",
+        "ME-LA comincia con ME.",
+        "MA su MARE, ME su MELA. MO non serve."
+      ],
+      "id": "078",
+      "instruction": "MARE comincia con MA, MELA con ME. Metti ogni sillaba sulla sua immagine.",
+      "sockets": [
+        "MARE",
+        "MELA"
+      ],
+      "success": "MA-RE e ME-LA: due raggi di luce uniscono sillaba e immagine!",
+      "title": "Due battiti, una parola"
+    },
+    {
+      "cubes": [
+        "Far",
+        "Fal",
+        "La",
+        "Fa"
+      ],
+      "hints": [
+        "Batti tre volte: FAR-FAL-LA.",
+        "La prima sillaba è FAR, poi FAL.",
+        "FAR, FAL, LA: tre passi per FARFALLA."
+      ],
+      "id": "079",
+      "instruction": "FARFALLA fa FAR-FAL-LA. Metti le tre sillabe sul ponticello in ordine.",
+      "sockets": [
+        "1",
+        "2",
+        "3"
+      ],
+      "success": "FAR-FAL-LA: una farfalla gigante apre le ali!",
+      "title": "Tre passi per FARFALLA"
+    },
+    {
+      "cubes": [
+        "Lu",
+        "Na",
+        "Pa",
+        "Ne"
+      ],
+      "hints": [
+        "Una ruota forma LUNA, l'altra forma PANE.",
+        "LU-NA per la luna, PA-NE per il pane.",
+        "Completa le due ruote nell'ordine che preferisci."
+      ],
+      "id": "080",
+      "instruction": "Due ruote: forma LUNA con LU+NA e PANE con PA+NE.",
+      "sockets": [
+        "1",
+        "2",
+        "1",
+        "2"
+      ],
+      "success": "Le due ruote girano: la Pietra Magica delle Sillabe riaccende il mulino!",
+      "title": "La ruota delle sillabe"
+    },
+    {
+      "cubes": [
+        "S",
+        "O",
+        "L",
+        "E"
+      ],
+      "hints": [
+        "SOLE è già diviso in SO-LE.",
+        "Le lettere sono S, O, L, E.",
+        "S, O, L, E: si legge SOLE."
+      ],
+      "id": "081",
+      "instruction": "L'insegna dice SOLE. Metti S, O, L, E nelle quattro caselle in ordine.",
+      "sockets": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "success": "S-O-L-E: la prima via della città si illumina!",
+      "title": "L'insegna del sole"
+    },
+    {
+      "cubes": [
+        "C",
+        "A",
+        "S",
+        "A"
+      ],
+      "hints": [
+        "La casa si divide in CA e SA.",
+        "Servono due A: una dopo C e una alla fine.",
+        "C, A, S, A: si legge CASA."
+      ],
+      "id": "082",
+      "instruction": "Bibi ha perso l'insegna di casa. Metti C, A, S, A nelle caselle.",
+      "sockets": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "success": "C-A-S-A: la porta di casa si apre!",
+      "title": "La casa di Bibi"
+    },
+    {
+      "cubes": [
+        "Sole",
+        "Luna",
+        "Pane"
+      ],
+      "hints": [
+        "Guarda l'immagine e ascolta la parola.",
+        "SOLE è la parola del sole, LUNA quella della luna.",
+        "SOLE con il sole, LUNA con la luna, PANE con il pane."
+      ],
+      "id": "083",
+      "instruction": "Tre piedistalli mostrano SOLE, LUNA e PANE. Metti ogni parola sulla sua immagine.",
+      "sockets": [
+        "SOLE",
+        "LUNA",
+        "PANE"
+      ],
+      "success": "Parole e immagini si incontrano: tre finestre si aprono!",
+      "title": "La parola amica"
+    },
+    {
+      "cubes": [
+        "A",
+        "E",
+        "I"
+      ],
+      "hints": [
+        "Ascolta la parola: MA-RE.",
+        "Dopo la M senti il suono A.",
+        "Metti A nello spazio vuoto: MARE."
+      ],
+      "id": "084",
+      "instruction": "Il cartello dice M _ R E. Quale lettera manca per formare MARE?",
+      "sockets": [
+        "M",
+        "?",
+        "R",
+        "E"
+      ],
+      "success": "MARE: il livello del mare sale e la città si specchia!",
+      "title": "Quale lettera manca?"
+    },
+    {
+      "cubes": [
+        "Pane",
+        "Pera",
+        "Palla",
+        "Mela",
+        "Sole",
+        "Luna"
+      ],
+      "hints": [
+        "Ascolta il primo suono di ogni parola.",
+        "PANE, PERA e PALLA cominciano con P.",
+        "Tre nel paniere P, tre nel paniere NON P."
+      ],
+      "id": "085",
+      "instruction": "Tre parole cominciano con P, tre no. Metti ogni parola nel paniere giusto.",
+      "sockets": [
+        "P",
+        "P",
+        "P",
+        "NON P",
+        "NON P",
+        "NON P"
+      ],
+      "success": "Tre con P, tre senza: il mercato si anima!",
+      "title": "Il paniere della P"
+    },
+    {
+      "cubes": [
+        "C",
+        "A",
+        "N",
+        "E",
+        "T",
+        "O",
+        "P",
+        "O"
+      ],
+      "hints": [
+        "CANE si divide in CA-NE. TOPO in TO-PO.",
+        "C, A, N, E per il cane; T, O, P, O per il topo.",
+        "Servono due O diverse per TOPO: nessun cubo si riusa."
+      ],
+      "id": "086",
+      "instruction": "Due cartelli: CANE e TOPO. Ricomponi entrambe le parole con le lettere giuste.",
+      "sockets": [],
+      "success": "CANE e TOPO: due animaletti ringraziano Bibi!",
+      "title": "Il cartello degli animali"
+    },
+    {
+      "cubes": [
+        "Piccolo",
+        "Grande"
+      ],
+      "hints": [
+        "Guarda la dimensione degli animali.",
+        "Il topolino è piccolo, l'orso è grande.",
+        "PICCOLO con il topolino, GRANDE con l'orso."
+      ],
+      "id": "087",
+      "instruction": "Il topolino è piccolo, l'orso è grande. Metti le parole sulle porte giuste.",
+      "sockets": [
+        "PICCOLO",
+        "GRANDE"
+      ],
+      "success": "Piccolo e grande: la piazza delle proporzioni si apre!",
+      "title": "Piccolo o grande?"
+    },
+    {
+      "cubes": [
+        "Mela",
+        "Pera",
+        "Pane",
+        "Palla",
+        "Treno",
+        "Trottola"
+      ],
+      "hints": [
+        "Alcuni oggetti si mangiano, altri servono per giocare.",
+        "Mela, pera e pane sono cibo. Palla, treno e trottola sono giochi.",
+        "Tre nel negozio DA MANGIARE, tre nel negozio PER GIOCARE."
+      ],
+      "id": "088",
+      "instruction": "Sei oggetti: tre da mangiare, tre per giocare. Mettili nei negozi giusti.",
+      "sockets": [
+        "DA MANGIARE",
+        "DA MANGIARE",
+        "DA MANGIARE",
+        "PER GIOCARE",
+        "PER GIOCARE",
+        "PER GIOCARE"
+      ],
+      "success": "Due negozi pieni: la città si riempie di voci!",
+      "title": "Il negozio delle categorie"
+    },
+    {
+      "cubes": [
+        "Cane",
+        "Una"
+      ],
+      "hints": [
+        "Ascolta la coda delle parole: -ane, -una.",
+        "PANE e CANE finiscono uguale. LUNA e UNA finiscono uguale.",
+        "CANE accanto a PANE, UNA accanto a LUNA."
+      ],
+      "id": "089",
+      "instruction": "PANE fa rima con CANE, LUNA con UNA. Metti ogni parola accanto alla sua rima.",
+      "sockets": [
+        "PANE",
+        "LUNA"
+      ],
+      "success": "Due rime, due campane: la città canta!",
+      "title": "Le parole in rima"
+    },
+    {
+      "cubes": [
+        "L",
+        "P",
+        "M",
+        "C"
+      ],
+      "hints": [
+        "La prima insegna è SO_E: manca una lettera.",
+        "SOLE vuole L. PANE vuole P.",
+        "Metti L in SO_E e P in _ANE."
+      ],
+      "id": "090",
+      "instruction": "Due insegne incomplete: SO_E e _ANE. Metti la lettera giusta in ciascuna.",
+      "sockets": [
+        "S",
+        "O",
+        "?",
+        "E",
+        "?",
+        "A",
+        "N",
+        "E"
+      ],
+      "success": "SOLE e PANE: la Pietra Magica delle Parole accende la città!",
+      "title": "La festa delle insegne"
+    },
+    {
+      "cubes": [
+        "Quadrato blu",
+        "Cerchio giallo",
+        "Quadrato giallo"
+      ],
+      "hints": [
+        "La sequenza alterna cerchio rosso e quadrato blu.",
+        "Dopo il terzo incastro torna il quadrato blu.",
+        "Il quarto incastro vuole il quadrato blu; poi un cerchio e un quadrato nei cesti."
+      ],
+      "id": "091",
+      "instruction": "Completa la sequenza rosso cerchio, blu quadrato, rosso cerchio… e ordina gli altri cubi nei cesti.",
+      "sockets": [
+        "?",
+        "CERCHIO",
+        "QUADRATO"
+      ],
+      "success": "Sequenza e cesti: il primo piano della torre si illumina!",
+      "title": "L'atrio delle forme"
+    },
+    {
+      "cubes": [
+        "9",
+        "11",
+        "5",
+        "Maggiore",
+        "Minore",
+        "Uguale"
+      ],
+      "hints": [
+        "La scala cresce di uno: 7, 8, ?, 10.",
+        "Dopo l'8 viene il 9.",
+        "Metti 9 nel gradino vuoto e > nel confronto, perché 9 è più di 6."
+      ],
+      "id": "092",
+      "instruction": "Completa la scala 7, 8, vuoto, 10 e il confronto 9 ? 6.",
+      "sockets": [
+        "7",
+        "8",
+        "?",
+        "10",
+        "9  ?  6"
+      ],
+      "success": "Nove sul gradino, maggiore nel confronto: la torre sale!",
+      "title": "La scala dei numeri"
+    },
+    {
+      "cubes": [
+        "Su",
+        "Su",
+        "Destra",
+        "Destra",
+        "Giù"
+      ],
+      "hints": [
+        "Il centro è chiuso: non puoi tagliare in diagonale.",
+        "Servono due passi SU e due passi DESTRA.",
+        "SU, SU, DESTRA, DESTRA porta la luce in alto a destra."
+      ],
+      "id": "093",
+      "instruction": "Porta la luce dall'angolo in basso a sinistra a quello in alto a destra in quattro passi.",
+      "sockets": [],
+      "success": "Quattro salti: la luce raggiunge il piano successivo!",
+      "title": "Il corridoio di quattro salti"
+    },
+    {
+      "cubes": [
+        "2",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "hints": [
+        "Conta i cristalli di ogni cassa.",
+        "Due più quattro fa sei.",
+        "Metti 2 e 4 nelle casse, poi 6 nel risultato."
+      ],
+      "id": "094",
+      "instruction": "Due casse hanno 2 e 4 cristalli. Metti i numeri delle casse e il totale.",
+      "sockets": [
+        "2",
+        "+",
+        "4",
+        "=",
+        "?"
+      ],
+      "success": "Due più quattro fa sei: sei specchi si riaccendono!",
+      "title": "La sala dei sei cristalli"
+    },
+    {
+      "cubes": [
+        "Unità",
+        "Unità",
+        "Unità",
+        "Unità",
+        "Unità",
+        "4",
+        "5",
+        "6"
+      ],
+      "hints": [
+        "Metti un cubo-unità in ogni sede del ponte.",
+        "Le sedi sono cinque.",
+        "Cinque unità, cinque sedi: il numero è 5."
+      ],
+      "id": "095",
+      "instruction": "Il ponte è lungo cinque unità. Copri tutte le sedi e scegli il numero giusto.",
+      "sockets": [
+        "?"
+      ],
+      "success": "Cinque unità contigue: il ponte porta alla biblioteca della torre!",
+      "title": "Il ponte misurato"
+    },
+    {
+      "cubes": [
+        "Lu",
+        "Na",
+        "L",
+        "U",
+        "N",
+        "A"
+      ],
+      "hints": [
+        "Due sillabe formano LUNA, quattro lettere la scrivono.",
+        "LU-NA con le sillabe; L-U-N-A con le lettere.",
+        "Completa prima le sillabe, poi le lettere."
+      ],
+      "id": "096",
+      "instruction": "Prima forma LU-NA con le sillabe, poi L-U-N-A con le lettere.",
+      "sockets": [
+        "1",
+        "2",
+        "L",
+        "U",
+        "N",
+        "A"
+      ],
+      "success": "LU-NA e L-U-N-A: la finestra fa entrare la luce della luna!",
+      "title": "La finestra della luna"
+    },
+    {
+      "cubes": [
+        "Rosso cerchio",
+        "Rosso cerchio",
+        "Rosso cerchio",
+        "Blu quadrato",
+        "Blu quadrato",
+        "Rosso quadrato",
+        "1",
+        "2",
+        "3"
+      ],
+      "hints": [
+        "Guarda due cose insieme: colore e forma.",
+        "Ci sono tre cerchi rossi, due quadrati blu e un quadrato rosso.",
+        "Tre nel cesto rosso cerchio, due nel blu quadrato, uno nel rosso quadrato; poi 3, 2, 1."
+      ],
+      "id": "097",
+      "instruction": "Dividi i sei cubi per colore e forma, poi metti il numero giusto su ogni cesto.",
+      "sockets": [
+        "ROSSO CERCHIO",
+        "BLU QUADRATO",
+        "ROSSO QUADRATO",
+        "?",
+        "?",
+        "?"
+      ],
+      "success": "Colore e forma, quantità e numero: la settima luce si accende!",
+      "title": "Il laboratorio delle differenze"
+    },
+    {
+      "cubes": [
+        "So",
+        "Le",
+        "Ca",
+        "Sa",
+        "Pa",
+        "Ne"
+      ],
+      "hints": [
+        "Ogni leggio vuole due sillabe.",
+        "SO-LE, CA-SA, PA-NE.",
+        "Completa i tre leggii nell'ordine che preferisci."
+      ],
+      "id": "098",
+      "instruction": "Ricomponi SOLE, CASA e PANE con le loro sillabe. Puoi completarle nell'ordine che vuoi.",
+      "sockets": [
+        "SOLE",
+        "SOLE",
+        "CASA",
+        "CASA",
+        "PANE",
+        "PANE"
+      ],
+      "success": "SOLE, CASA, PANE: l'osservatorio si apre!",
+      "title": "Il messaggio delle tre parole"
+    },
+    {
+      "cubes": [
+        "Triangolo",
+        "Cerchio",
+        "Quadrato",
+        "Cinque gemme",
+        "Nastro corto",
+        "Nastro lungo",
+        "Ma",
+        "Re",
+        "Ra"
+      ],
+      "hints": [
+        "Ogni stazione ha il suo cubo e il suo incastro.",
+        "La forma è il triangolo; le gemme sono cinque; il nastro lungo è quello da quattro.",
+        "Triangolo, cinque gemme, nastro lungo, poi MA-RE."
+      ],
+      "id": "099",
+      "instruction": "Quattro stazioni: la forma, le gemme, il nastro più lungo e la parola MARE.",
+      "sockets": [
+        "TRIANGOLO",
+        "5",
+        "PIÙ LUNGO",
+        "1",
+        "2"
+      ],
+      "success": "Quattro serrature si aprono: la torre è quasi accesa!",
+      "title": "Le quattro chiavi"
+    },
+    {
+      "cubes": [
+        "3",
+        "5",
+        "Pa",
+        "Ne",
+        "Corda corta",
+        "Corda lunga",
+        "Cerchio",
+        "Triangolo"
+      ],
+      "hints": [
+        "Cinque altari, cinque piccole prove.",
+        "Nella scala manca il 3; 2+3 fa 5; la parola è PA-NE.",
+        "La corda più lunga è quella da 5; cerchio con cerchio, triangolo con triangolo."
+      ],
+      "id": "100",
+      "instruction": "Completa i cinque altari: la scala, l'addizione, la parola, la corda e le forme.",
+      "sockets": [
+        "1",
+        "2",
+        "?",
+        "4",
+        "2",
+        "+",
+        "3",
+        "=",
+        "?",
+        "1",
+        "2",
+        "PIÙ LUNGA",
+        "CERCHIO",
+        "TRIANGOLO"
+      ],
+      "success": "Le cento pietre magiche brillano insieme: la Stella delle Possibilità è accesa!",
+      "title": "La Stella delle Possibilità"
+    }
+  ],
+  "regions": [
+    "Bosco delle Somiglianze",
+    "Sentieri del Vento",
+    "Giardino delle Quantità",
+    "Ferrovia delle Serie",
+    "Officina delle Stelle",
+    "Valle delle Misure",
+    "Biblioteca dei Suoni",
+    "Mulino delle Sillabe",
+    "Città delle Parole",
+    "Torre delle Cento Luci"
+  ]
+}

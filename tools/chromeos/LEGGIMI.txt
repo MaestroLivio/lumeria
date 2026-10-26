@@ -1,0 +1,39 @@
+LUMERIA SU CHROMEOS
+===================
+
+La via consigliata è l'ambiente Linux di ChromeOS (Crostini).
+
+1. Attiva Linux: Impostazioni → Informazioni su ChromeOS → Ambiente di
+   sviluppo Linux → Attiva.
+2. Nella finestra "Terminale Linux" crea la cartella del gioco e copiaci i file:
+
+       mkdir -p ~/Lumeria
+       # copia Lumeria.x86_64 dentro ~/Lumeria (trascina e rilascia, oppure usa
+       # il filesystem condiviso: File → Linux più recente)
+
+3. Avvia:
+
+       cd ~/Lumeria
+       chmod +x Lumeria.x86_64
+       ./Lumeria.x86_64
+
+   Se il Chromebook non ha Vulkan, avvia in modalità compatibile:
+
+       ./Lumeria.x86_64 --rendering-method gl_compatibility --rendering-driver opengl3
+
+4. Per avere l'icona nel launcher Linux, copia Lumeria.desktop in
+   ~/.local/share/applications/ :
+
+       mkdir -p ~/.local/share/applications
+       cp Lumeria.desktop ~/.local/share/applications/
+       chmod +x ~/.local/share/applications/Lumeria.desktop
+
+   L'icona si aspetta il gioco in ~/Lumeria, come nel passo 2.
+
+Note
+- Su un Chromebook ARM usa la build Linux ARM64 (Lumeria.arm64): copiala in
+  ~/Lumeria e cambia il comando del file .desktop in `./Lumeria.arm64`.
+- Il gioco è offline e non richiede account: tutti i dati restano nella
+  cartella dati dell'app dentro l'ambiente Linux.
+- Se il Chromebook supporta le app Android e la modalità sviluppatore, è
+  possibile installare anche l'APK; la build Linux non richiede lo sblocco.
