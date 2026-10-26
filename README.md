@@ -240,6 +240,8 @@ tests/asset_gallery.gd           galleria di controllo dei modelli .glb
 tests/avatar_portrait.gd         ritratti di controllo dell'avatar (viso, schiena)
 screenshots/                     catture di verifica (23 immagini)
 export_presets.cfg               preset macOS, Windows, Linux x86_64/ARM64
+LICENSE                          licenza CC BY 4.0 del progetto
+NOTICE                           copyright e attribuzione
 THIRD_PARTY_NOTICES.md           licenze di voci, Kokoro, Godot e modelli
 build/Lumeria.app                applicazione esportata
 ```
@@ -500,9 +502,10 @@ Attribuzione consigliata:
 > “Lumeria” di MaestroLivio — https://github.com/MaestroLivio/lumeria —
 > licenza CC BY 4.0.
 
-Il testo completo della licenza è in [`LICENSE`](LICENSE). Le componenti di
-terze parti mantengono le proprie licenze: le voci neurali sono Apache-2.0, il
-motore Godot è MIT. Dettagli in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+Il testo completo della licenza è in [`LICENSE`](LICENSE); copyright e
+attribuzione sono in [`NOTICE`](NOTICE). Le componenti di terze parti
+mantengono le proprie licenze: le voci neurali sono Apache-2.0, il motore Godot
+è MIT. Dettagli in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 ---
 
