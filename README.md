@@ -11,6 +11,11 @@ tutte si apre la **Stella delle Possibilità**.
 - Input: **gamepad prima di tutto**, ma tastiera e mouse funzionano sempre
 - Avvio: **finestra ridimensionabile 1280×720** (minimo 960×540)
 
+## Scarica
+
+Le build pronte per macOS, Windows, Linux e ChromeOS sono nella pagina
+[Releases](https://github.com/MaestroLivio/lumeria/releases/latest).
+
 ---
 
 ## Avvio rapido
