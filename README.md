@@ -35,7 +35,7 @@ Le build pronte per macOS, Windows, Linux e ChromeOS sono nella pagina
   </tr>
   <tr>
     <td width="50%"><a href="screenshots/17_missione_percorso.png"><img src="screenshots/presentazione/05_percorso.jpg" alt="Missione con un percorso"></a><br><sub><b>Percorsi</b> — passi, direzioni e sequenze da ricostruire con le casse.</sub></td>
-    <td width="50%"><a href="screenshots/19_conta_base.png"><img src="screenshots/presentazione/06_quantita.jpg" alt="Missione di conteggio"></a><br><sub><b>Quantità</b> — conta gli elementi e scegli il numero giusto.</sub></td>
+    <td width="50%"><a href="screenshots/21_conta_etichette.png"><img src="screenshots/presentazione/06_quantita.jpg" alt="Missione di conteggio con le cifre"></a><br><sub><b>Quantità</b> — conta i semi in ogni aiuola e scegli la cifra giusta.</sub></td>
   </tr>
   <tr>
     <td width="50%"><a href="screenshots/08_mappa.png"><img src="screenshots/presentazione/07_mappa.jpg" alt="Mappa delle regioni"></a><br><sub><b>Mappa</b> — 10 regioni e 100 pietre magiche da accendere.</sub></td>
