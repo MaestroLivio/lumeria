@@ -2,6 +2,8 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
+![Il Hub di Lumeria, con il personaggio davanti alla fontana delle cento luci](screenshots/presentazione/01_hub.jpg)
+
 Gioco educativo 3D in italiano per bambini di **5–7 anni**. Si esplora un mondo
 low-poly colorato, senza combattimenti, timer o penalità, e si risolvono **100
 missioni** divise in **10 regioni**. Ogni missione accende una pietra magica; completandole
@@ -19,6 +21,39 @@ tutte si apre la **Stella delle Possibilità**.
 
 Le build pronte per macOS, Windows, Linux e ChromeOS sono nella pagina
 [Releases](https://github.com/MaestroLivio/lumeria/releases/latest).
+
+## Screenshot
+
+<table>
+  <tr>
+    <td width="50%"><a href="screenshots/02_impostazioni.png"><img src="screenshots/presentazione/11_impostazioni.jpg" alt="Impostazioni di Lumeria"></a><br><sub><b>Impostazioni</b> — audio, video, bagliore, accessibilità, camera e comandi.</sub></td>
+    <td width="50%"><a href="screenshots/01_menu.png"><img src="screenshots/presentazione/02_menu.jpg" alt="Menu principale"></a><br><sub><b>Menu principale</b> — continua, nuova partita, mappa, diario e impostazioni.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="screenshots/06_missione.png"><img src="screenshots/presentazione/03_missione.jpg" alt="Una missione sul tavolo"></a><br><sub><b>Missioni</b> — il personaggio prende le casse dal banco e le posa sulle pedane.</sub></td>
+    <td width="50%"><a href="screenshots/16_missione_misura.png"><img src="screenshots/presentazione/04_misure.jpg" alt="Missione sulle misure"></a><br><sub><b>Misure</b> — corde proporzionali e torri graduate rendono leggibili lunghezze e altezze.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="screenshots/17_missione_percorso.png"><img src="screenshots/presentazione/05_percorso.jpg" alt="Missione con un percorso"></a><br><sub><b>Percorsi</b> — passi, direzioni e sequenze da ricostruire con le casse.</sub></td>
+    <td width="50%"><a href="screenshots/19_conta_base.png"><img src="screenshots/presentazione/06_quantita.jpg" alt="Missione di conteggio"></a><br><sub><b>Quantità</b> — conta gli elementi e scegli il numero giusto.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="screenshots/08_mappa.png"><img src="screenshots/presentazione/07_mappa.jpg" alt="Mappa delle regioni"></a><br><sub><b>Mappa</b> — 10 regioni e 100 pietre magiche da accendere.</sub></td>
+    <td width="50%"><a href="screenshots/10_guardaroba.png"><img src="screenshots/presentazione/08_guardaroba.jpg" alt="Guardaroba dell'avatar"></a><br><sub><b>Guardaroba</b> — capelli, cappelli e colori per personalizzare l'avatar.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="screenshots/07_vittoria.png"><img src="screenshots/presentazione/09_vittoria.jpg" alt="Pietra magica accesa"></a><br><sub><b>Vittoria</b> — ogni missione completata accende una pietra magica.</sub></td>
+    <td width="50%"><a href="screenshots/12_finale.png"><img src="screenshots/presentazione/10_finale.jpg" alt="La Stella delle Possibilità"></a><br><sub><b>Finale</b> — completando tutte le missioni si apre la Stella delle Possibilità.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="screenshots/14_docente.png"><img src="screenshots/presentazione/12_docente.jpg" alt="Pannello docente"></a><br><sub><b>Pannello docente</b> — riepilogo locale, esportazione e importazione dei progressi.</sub></td>
+    <td width="50%"><a href="screenshots/15_laboratorio.png"><img src="screenshots/presentazione/13_laboratorio.jpg" alt="Laboratorio libero"></a><br><sub><b>Laboratorio</b> — uno spazio libero per provare le casse senza soluzione né penalità.</sub></td>
+  </tr>
+</table>
+
+Le catture sono state prese a 1280×720 logici su uno schermo Retina: i PNG originali
+in [`screenshots/`](screenshots/) sono 2560×1440, mentre le immagini di questa
+pagina sono versioni JPEG a 1280×720 per caricare più in fretta.
 
 ---
 
@@ -242,7 +277,8 @@ tests/voice_bank.gd              voice bank: OGG importati, caricabili e trovati
 tests/mission_shots.gd           catture prima/dopo di singole missioni
 tests/asset_gallery.gd           galleria di controllo dei modelli .glb
 tests/avatar_portrait.gd         ritratti di controllo dell'avatar (viso, schiena)
-screenshots/                     catture di verifica (23 immagini)
+screenshots/                     catture di verifica (23 PNG)
+screenshots/presentazione/       versioni JPEG leggere per README e presentazioni
 version.json                     ultima versione e URL dei pacchetti per l'updater
 export_presets.cfg               preset macOS, Windows, Linux x86_64/ARM64
 LICENSE                          licenza CC BY 4.0 del progetto
@@ -522,12 +558,38 @@ mostra errori.
   *Intensità del bagliore* in Video: da spento a 150%, applicato subito a
   materiali emissivi, lanterne, cartelli e ambiente.
 
-## Screenshot
+## Galleria completa
 
-Le immagini in `screenshots/` coprono menu, impostazioni (1280×720 e 960×540),
-mondo, regione, missioni rappresentative, vittoria, mappa, diario, guardaroba,
-tutorial, finale, pausa, pannello docente, laboratorio e le missioni con vetrina
-o percorso.
+Tutte le 23 catture di verifica, in ordine:
+
+| Immagine | Contenuto |
+|---|---|
+| [01_menu.png](screenshots/01_menu.png) | Menu principale |
+| [02_impostazioni.png](screenshots/02_impostazioni.png) | Impostazioni a 1280×720 |
+| [03_impostazioni_960.png](screenshots/03_impostazioni_960.png) | Impostazioni alla dimensione minima 960×540 |
+| [04_mondo.png](screenshots/04_mondo.png) | Hub di Lumeria e fontana delle cento luci |
+| [05_regione.png](screenshots/05_regione.png) | Una regione del mondo |
+| [06_missione.png](screenshots/06_missione.png) | Missione sul tavolo con banco delle casse |
+| [07_vittoria.png](screenshots/07_vittoria.png) | Pietra magica accesa |
+| [08_mappa.png](screenshots/08_mappa.png) | Mappa delle 10 regioni |
+| [09_diario.png](screenshots/09_diario.png) | Diario delle missioni |
+| [10_guardaroba.png](screenshots/10_guardaroba.png) | Guardaroba dell'avatar |
+| [11_tutorial.png](screenshots/11_tutorial.png) | Tutorial in cinque passi |
+| [12_finale.png](screenshots/12_finale.png) | Stella delle Possibilità |
+| [13_pausa.png](screenshots/13_pausa.png) | Pausa |
+| [14_docente.png](screenshots/14_docente.png) | Pannello docente |
+| [15_laboratorio.png](screenshots/15_laboratorio.png) | Laboratorio libero |
+| [16_missione_misura.png](screenshots/16_missione_misura.png) | Misure con corde e torri graduate |
+| [17_missione_percorso.png](screenshots/17_missione_percorso.png) | Percorso a quattro salti |
+| [18_missione_finale.png](screenshots/18_missione_finale.png) | Missione finale |
+| [19_conta_base.png](screenshots/19_conta_base.png) | Conteggio: il prato del tre |
+| [20_conta_quattro.png](screenshots/20_conta_quattro.png) | Conteggio: quattro elementi |
+| [21_conta_etichette.png](screenshots/21_conta_etichette.png) | Conteggio con etichette |
+| [22_conta_molti.png](screenshots/22_conta_molti.png) | Conteggio con molti elementi |
+| [23_conta_ampia.png](screenshots/23_conta_ampia.png) | Conteggio su schermo ampio |
+
+Le stesse immagini sono disponibili in versione JPEG leggera nella cartella
+[`screenshots/presentazione/`](screenshots/presentazione/).
 
 ---
 
