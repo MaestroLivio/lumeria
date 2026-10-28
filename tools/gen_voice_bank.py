@@ -170,6 +170,12 @@ def build_jobs():
     return sorted(jobs)
 
 
+def _dest_for(role, text):
+    """Percorso OGG atteso per un testo, o "" se il file non esiste ancora."""
+    dest = os.path.join(OUT, role, hashlib.sha256(text.encode("utf-8")).hexdigest() + ".ogg")
+    return dest if os.path.exists(dest) else ""
+
+
 def _init_worker():
     from titl import Voice
     for short, model in (("sara", "if_sara"), ("nicola", "im_nicola")):
@@ -217,10 +223,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry", action="store_true")
     ap.add_argument("--jobs", type=int, default=6)
+    ap.add_argument("--missing", action="store_true",
+                    help="genera solo i testi che non hanno ancora il loro OGG, senza "
+                         "riscrivere i file esistenti (stessa voce, nessun ritocco al resto)")
     args = ap.parse_args()
     parse_voice_config()
-    jobs = build_jobs()
-    print("voice bank: %d testi unici" % len(jobs))
+    all_jobs = build_jobs()
+    print("voice bank: %d testi unici" % len(all_jobs))
+    jobs = all_jobs
+    if args.missing:
+        jobs = [j for j in all_jobs if not _dest_for(j[0], j[1])]
+        print("voice bank: %d già presenti, %d da generare" % (
+            len(all_jobs) - len(jobs), len(jobs)))
     counts = {}
     for role, _ in jobs:
         counts[role] = counts.get(role, 0) + 1
@@ -237,7 +251,7 @@ def main():
     made = 0
     failed = []
     expected = set()
-    for role, text in jobs:
+    for role, text in all_jobs:
         expected.add(os.path.join(OUT, role, hashlib.sha256(text.encode("utf-8")).hexdigest() + ".ogg"))
     with concurrent.futures.ProcessPoolExecutor(
             max_workers=args.jobs, initializer=_init_worker) as pool:

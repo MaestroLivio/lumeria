@@ -93,6 +93,7 @@ risultato.
 |---|---|
 | Camminare | Stick sinistro / D-pad |
 | Ruotare la camera | Stick destro |
+| Passare da terza persona a soggettiva | clic dello stick destro |
 | Prendere o posare un cubo | **A** |
 | Aiuto | **X** |
 | Ascoltare di nuovo | **Y** |
@@ -117,6 +118,7 @@ mano, apre l'uscita dalla missione.
 |---|---|
 | Camminare | **WASD** o frecce |
 | Ruotare la camera | trascinare con il tasto sinistro del mouse |
+| Passare da terza persona a soggettiva | **V** |
 | Prendere o posare | **E**, **Invio** o **Spazio** |
 | Aiuto | **H** |
 | Ascoltare | **Tab** o **L** |
@@ -214,11 +216,12 @@ Il menu **Impostazioni** è completo e navigabile solo con il gamepad.
   Bilanciata / Massima
 - **Accessibilità** — dimensione del testo, sottotitoli, alto contrasto,
   riduzione del movimento, niente flash, contorni spessi, frequenza degli aiuti,
-  modalità guidata; la camera facilitata si attiva da **Camera**
-- **Camera** — sensibilità, inseguimento o orbita, inversione asse Y,
-  ricentraggio dolce, **camera facilitata** nelle missioni (attiva di default:
-  segue dolcemente il personaggio dopo il primo passo, mantenendo il tavolo
-  inquadrato)
+  modalità guidata
+- **Camera** — **visuale** in terza persona o **soggettiva** (in soggettiva il
+  personaggio non si vede) e **camera facilitata**, attiva di default: in terza
+  persona la camera si sposta da sola dietro il personaggio mentre cammina, così
+  si gioca con il solo stick sinistro. La visuale si cambia al volo con **V** o
+  con un clic dello stick destro
 - **Comandi** — zona morta, vibrazione, solo D-pad, simboli del controller,
   test interattivo del gamepad
 - **Gioco** — percorso suggerito, modalità classe, tutorial, controllo
@@ -235,7 +238,7 @@ Le modifiche si applicano subito e restano salvate sul dispositivo. Il pulsante
 
 - Nessun testo obbligatorio per giocare: voce, icone, colori e forme.
 - La voce è **pre-registrata e inclusa nell'app**: una banca di frammenti
-  neurali in `assets/voices/` (1.367 frammenti, circa un'ora e mezza di parlato). Il gioco parla anche
+  neurali in `assets/voices/` (1.365 frammenti, circa un'ora e mezza di parlato). Il gioco parla anche
   su un computer senza voci di sistema installate e non usa la sintesi vocale
   del sistema operativo.
 - Le voci sono **teacher-in-the-loop** (distillati di Kokoro-82M, licenza
@@ -330,10 +333,10 @@ Eseguiti su macOS con Godot 4.7.2.
   --script tests/mission_layout.gd
 # → LAYOUT missioni=100 problemi=0 · LAYOUT OK
 
-# Voice bank: 1.367 OGG importati, caricabili e trovati dal lookup
+# Voice bank: 1.365 OGG importati, caricabili e trovati dal lookup
 /Applications/Godot.app/Contents/MacOS/Godot --headless --path . \
   --script tests/voice_bank.gd
-# → VOICEBANK files=1367 loaded=1367 · missioni=1682 mancanti=0 · VOICEBANK OK
+# → VOICEBANK files=1365 loaded=1365 · missioni=1682 mancanti=0 · VOICEBANK OK
 ```
 
 Per rigenerare le catture (23 immagini in `screenshots/`):
@@ -385,12 +388,20 @@ Dopo aver modificato i testi delle missioni:
 /Applications/Godot.app/Contents/MacOS/Godot --headless --path . \
   --script tools/dump_voice_texts.gd
 # 2. sintetizza le voci (serve Python 3.10–3.12, ffmpeg e oggenc)
-#    crea un ambiente dedicato, per esempio:
-#    uv venv --python 3.12 .venv-titl
-#    uv pip install --python .venv-titl/bin/python teacher-in-the-loop
-.venv-titl/bin/python tools/gen_voice_bank.py --jobs 6
+#    brew install python@3.12 vorbis-tools ffmpeg
+#    /opt/homebrew/bin/python3.12 -m venv .venv-voice
+#    .venv-voice/bin/python -m pip install teacher-in-the-loop
+.venv-voice/bin/python tools/gen_voice_bank.py --jobs 6
 # 3. reimporta gli OGG in Godot
 /Applications/Godot.app/Contents/MacOS/Godot --headless --path . --import
+```
+
+Se sono cambiate solo alcune frasi, usa `--missing`: genera soltanto gli OGG
+assenti e lascia intatte le registrazioni già presenti, così il timbro della
+banca non cambia.
+
+```bash
+.venv-voice/bin/python tools/gen_voice_bank.py --missing --jobs 4
 ```
 
 Lo script elimina i frammenti non più usati, quindi la banca resta allineata ai

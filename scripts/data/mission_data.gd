@@ -248,7 +248,7 @@ static func _r1() -> Array:
 
 	out.append(M("004", 1, "Le foglie differenti",
 		"Riconoscere l'elemento non appartenente a una categoria.",
-		"Metti la conchiglia nella pedana DIVERSO, poi porta le tre foglie nella cesta.",
+		"Metti la conchiglia nella pedana DIVERSA, poi porta le tre foglie nella cesta.",
 		"match",
 		[
 			C("l1", "foglia", {"icon": "leaf", "color": "verde", "spoken": "Foglia verde"}),
@@ -257,20 +257,20 @@ static func _r1() -> Array:
 			C("l4", "conchiglia", {"icon": "shell", "color": "rosa", "spoken": "Conchiglia"}),
 		],
 		[
-			S("diverso", "conchiglia", {"hint_icon": "diverso", "hint_label": "DIVERSO"}),
+			S("diverso", "conchiglia", {"hint_icon": "diverso", "hint_label": "DIVERSA"}),
 			S("cesta1", "foglia", {"group": "cesta", "hint_icon": "leaf", "hint_color": "verde"}),
 			S("cesta2", "foglia", {"group": "cesta", "hint_icon": "leaf", "hint_color": "verde"}),
 			S("cesta3", "foglia", {"group": "cesta", "hint_icon": "leaf", "hint_color": "verde"}),
 		],
 		_three_hints("Tre oggetti sono foglie. Uno non lo è.",
 			"Guarda la forma: la conchiglia non è una foglia.",
-			"Metti la conchiglia in DIVERSO e tutte e tre le foglie nella cesta."),
+			"Metti la conchiglia in DIVERSA e tutte e tre le foglie nella cesta."),
 		"La conchiglia è diversa, le foglie sono tutte insieme. Una farfalla è arrivata!",
 		{"groups": {"cesta": {"foglia": 3}}, "effect": "farfalla"}))
 
 	out.append(M("005", 1, "I due cestini",
 		"Classificare per due categorie semantiche familiari.",
-		"Metti il cibo nel cesto CIBO e i giochi nel cesto GIOCO.",
+		"Metti il cibo nel cesto CIBO e i giocattoli nel cesto GIOCATTOLI.",
 		"group",
 		[
 			C("mela", "mela", {"icon": "apple", "spoken": "Mela"}),
@@ -281,16 +281,16 @@ static func _r1() -> Array:
 			C("trenino", "trenino", {"icon": "train", "color": "verde", "spoken": "Trenino"}),
 		],
 		[
-			S("c1", ["mela", "pera", "banana"], {"group": "cibo", "hint_icon": "cibo"}),
-			S("c2", ["mela", "pera", "banana"], {"group": "cibo", "hint_icon": "cibo"}),
-			S("c3", ["mela", "pera", "banana"], {"group": "cibo", "hint_icon": "cibo"}),
-			S("g1", ["palla", "trottola", "trenino"], {"group": "gioco", "hint_icon": "gioco"}),
-			S("g2", ["palla", "trottola", "trenino"], {"group": "gioco", "hint_icon": "gioco"}),
-			S("g3", ["palla", "trottola", "trenino"], {"group": "gioco", "hint_icon": "gioco"}),
+			S("c1", ["mela", "pera", "banana"], {"group": "cibo", "hint_icon": "cibo", "hint_color": "arancio"}),
+			S("c2", ["mela", "pera", "banana"], {"group": "cibo", "hint_icon": "cibo", "hint_color": "arancio"}),
+			S("c3", ["mela", "pera", "banana"], {"group": "cibo", "hint_icon": "cibo", "hint_color": "arancio"}),
+			S("g1", ["palla", "trottola", "trenino"], {"group": "gioco", "hint_icon": "gioco", "hint_color": "viola"}),
+			S("g2", ["palla", "trottola", "trenino"], {"group": "gioco", "hint_icon": "gioco", "hint_color": "viola"}),
+			S("g3", ["palla", "trottola", "trenino"], {"group": "gioco", "hint_icon": "gioco", "hint_color": "viola"}),
 		],
 		_three_hints("Alcuni oggetti si mangiano, altri si usano per giocare.",
-			"Mela, pera e banana sono cibo. Palla, trottola e trenino sono giochi.",
-			"Metti i tre cibi nel cesto CIBO e i tre giochi nel cesto GIOCO."),
+			"Mela, pera e banana sono cibo. Palla, trottola e trenino sono giocattoli.",
+			"Metti i tre cibi nel cesto CIBO e i tre giocattoli nel cesto GIOCATTOLI."),
 		"Hai diviso il cibo dai giochi: tre e tre!",
 		{"groups": {"cibo": {"mela": 1, "pera": 1, "banana": 1}, "gioco": {"palla": 1, "trottola": 1, "trenino": 1}}, "effect": "lanterne"}))
 

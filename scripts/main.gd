@@ -168,7 +168,7 @@ func _resume_world() -> void:
 	player.input_enabled = true
 	rig.input_enabled = true
 	rig.cinematic = false
-	rig.target = player
+	rig.set_target(player)
 	rig.set_distance(5.7)
 	rig.global_position = player.global_position + Vector3(0, 1.15, 0)
 	rig.get_camera().current = true
@@ -555,7 +555,7 @@ func _interact() -> void:
 		else:
 			_open_mission(s.station_id, false, s)
 		return
-	Audio.say("Avvicinati a una luce e premi A per interagire.")
+	Audio.say("Avvicinati a un cerchio e premi A per interagire.")
 
 func _open_special(kind: String) -> void:
 	match kind:
@@ -596,7 +596,18 @@ func _listen_nearby() -> void:
 		else:
 			Audio.say("%s. %s" % [_near_station.title, str(_near_station.mission.get("instruction", ""))])
 		return
-	Audio.say("Cammina verso una luce. Quando sei vicino, premi A.")
+	Audio.say("Cammina verso un cerchio. Quando sei vicino, premi A.")
+
+## Il giocatore chiede la soggettiva (o torna in terza persona) senza aprire
+## i menu: la scelta resta quella salvata, anche alla partita successiva.
+func _toggle_camera_view() -> void:
+	var first := str(Settings.get_setting("camera_view", "third")) == "first"
+	Settings.set_setting("camera_view", "third" if first else "first")
+	Audio.play_sfx("click")
+	if first:
+		hud.toast("Visuale in terza persona", 1.8)
+	else:
+		hud.toast("Visuale in soggettiva", 1.8)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_F11:
@@ -608,6 +619,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if event.is_action_pressed("pause"):
 		_open_overlay(PausePage.new(), "play")
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("camera_toggle"):
+		_toggle_camera_view()
 		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("journal"):
 		_open_overlay(JournalPage.new(), "play")

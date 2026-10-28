@@ -9,6 +9,9 @@ var rig: CameraRig
 var visual: Node3D
 var input_enabled := true
 var moving := false
+## In soggettiva il personaggio non si vede: la camera sta nei suoi occhi.
+var _first_person := false
+var _shadow: MeshInstance3D
 var _bob := 0.0
 var _step := 0.0
 var _gravity := 18.0
@@ -32,6 +35,7 @@ func _ready() -> void:
 
 func _build_contact_shadow() -> void:
 	var quad := MeshInstance3D.new()
+	_shadow = quad
 	var mesh := QuadMesh.new()
 	mesh.size = Vector2(1.15, 1.15)
 	quad.mesh = mesh
@@ -48,6 +52,19 @@ func refresh_appearance() -> void:
 		visual.queue_free()
 	visual = AvatarBuilder.build(SaveGame.appearance())
 	add_child(visual)
+	_refresh_visibility()
+
+## La camera comunica qui la visuale attiva. In soggettiva spariscono modello
+## e ombra, così non ci si vede "dentro": resta solo il mondo davanti.
+func set_camera_view(show_avatar: bool, _cinematic: bool = false) -> void:
+	_first_person = not show_avatar
+	_refresh_visibility()
+
+func _refresh_visibility() -> void:
+	if visual and is_instance_valid(visual):
+		visual.visible = not _first_person
+	if _shadow and is_instance_valid(_shadow):
+		_shadow.visible = not _first_person
 
 func set_rig(r: CameraRig) -> void:
 	rig = r

@@ -36,7 +36,10 @@ func build(d: Dictionary, pos: Vector3) -> void:
 	has_tower = not tower.is_empty()
 	if has_bar or has_tower:
 		cube_offset = Vector3(0, 0, 0.36)
-	var color: Color = MissionData.COLORS.get(str(d.get("hint_color", "teal")), Color("#4FB3A9"))
+	# Anche la ghiera prende il colore della figura: una perla d'oro ha
+	# l'anello dorato, una di teal ha l'anello verde acqua.
+	var color: Color = MissionData.COLORS.get(
+		str(d.get("hint_color", str(d.get("fixed_color", "teal")))), Color("#4FB3A9"))
 	MeshHelpers.box(self, Vector3(1.22, 0.1, 1.22), Color("#EBD9B8"), Vector3(0, 0.05, 0))
 	MeshHelpers.box(self, Vector3(1.02, 0.04, 1.02), Color("#E3D2B8"), Vector3(0, 0.11, 0))
 	for sx in [-1.0, 1.0]:
@@ -60,15 +63,19 @@ func build(d: Dictionary, pos: Vector3) -> void:
 			var fixed_label := str(d.get("fixed_label", str(d.get("fixed", ""))))
 			var fixed_icon := str(d.get("fixed_icon", ""))
 			var fixed_color: Color = MissionData.COLORS.get(str(d.get("fixed_color", "legno")), Color("#D8B98A"))
-			MeshHelpers.box(self, Vector3(0.76, 0.76, 0.1), fixed_color, Vector3(0, 0.36, 0),
-				Vector3.ZERO, fixed_color, 0.12)
+			# Piastra chiara con cornice colorata e figura nel colore vivo della
+			# perla: prima l'icona era scura e le sequenze sembravano tutte nere.
+			MeshHelpers.box(self, Vector3(0.80, 0.80, 0.07), fixed_color, Vector3(0, 0.36, 0),
+				Vector3.ZERO, fixed_color, 0.20)
+			MeshHelpers.box(self, Vector3(0.68, 0.68, 0.05), fixed_color.lightened(0.68),
+				Vector3(0, 0.36, 0.05))
 			if fixed_icon != "" and fixed_label != "":
-				MeshHelpers.icon(self, fixed_icon, Color("#3B2A20"), 0.44, Vector3(0, 0.46, 0.26), false)
-				MeshHelpers.label(self, fixed_label, 26, Color("#3B2A20"), Vector3(0, 0.2, 0.27), 34, false)
+				MeshHelpers.icon(self, fixed_icon, fixed_color, 0.42, Vector3(0, 0.47, 0.11), false)
+				MeshHelpers.label(self, fixed_label, 25, Color("#3B2A20"), Vector3(0, 0.19, 0.11), 32, false)
 			elif fixed_icon != "":
-				MeshHelpers.icon(self, fixed_icon, Color("#3B2A20"), 0.58, Vector3(0, 0.36, 0.27), false)
+				MeshHelpers.icon(self, fixed_icon, fixed_color, 0.56, Vector3(0, 0.36, 0.11), false)
 			else:
-				MeshHelpers.label(self, fixed_label, 42, Color("#3B2A20"), Vector3(0, 0.34, 0.27), 50, false)
+				MeshHelpers.label(self, fixed_label, 42, Color("#3B2A20"), Vector3(0, 0.34, 0.11), 50, false)
 			if text == "":
 				text = fixed_label
 	if text != "":

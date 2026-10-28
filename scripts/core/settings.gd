@@ -24,11 +24,8 @@ const DEFAULTS := {
 	"vsync": true,
 	"window_mode": "windowed",
 	"resolution": 0,
-	"camera_sensitivity": 1.0,
-	"invert_y": false,
-	"camera_mode": "follow",
-	"auto_recenter": true,
-	"assisted_camera": true,
+	"camera_view": "third",
+	"camera_assist": true,
 	"avatar_speed": 4.6,
 	"deadzone": 0.25,
 	"vibration": false,
@@ -125,7 +122,7 @@ func _apply(key: String) -> void:
 		"vibration":
 			if not bool(data.get("vibration", false)):
 				Input.stop_joy_vibration(0)
-		"camera_mode", "auto_recenter", "dpad_only", "avatar_speed", "deadzone":
+		"camera_view", "camera_assist", "dpad_only", "avatar_speed", "deadzone":
 			pass
 
 func _apply_audio() -> void:
@@ -328,6 +325,7 @@ func _ensure_inputs() -> void:
 	_button_action("highlight", [KEY_TAB, KEY_L], JOY_BUTTON_Y)
 	_button_action("cycle_next", [KEY_R], JOY_BUTTON_RIGHT_SHOULDER)
 	_button_action("cycle_prev", [KEY_Q], JOY_BUTTON_LEFT_SHOULDER)
+	_button_action("camera_toggle", [KEY_V], JOY_BUTTON_RIGHT_STICK)
 	_axis_action("zoom_in", [KEY_EQUAL, KEY_KP_ADD], JOY_AXIS_TRIGGER_RIGHT, 1.0)
 	_axis_action("zoom_out", [KEY_MINUS, KEY_KP_SUBTRACT], JOY_AXIS_TRIGGER_LEFT, 1.0)
 	_button_action("pause", [KEY_P, KEY_ESCAPE], JOY_BUTTON_START)

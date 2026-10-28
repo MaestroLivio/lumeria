@@ -507,7 +507,9 @@ func _build_region_stations(i: int, root: Node3D, center: Vector3, angle: float,
 	var missions := MissionData.region_missions(i + 1)
 	for j in range(missions.size()):
 		var m: Dictionary = missions[j]
-		var col := j % 5
+		# Le missioni si leggono da sinistra verso destra: la prima della
+		# regione sta sulla sinistra di chi entra nell'area di scelta.
+		var col := 4 - (j % 5)
 		var row := j / 5
 		# Più spazio tra le postazioni: si passa comodamente anche correndo.
 		var local := Vector3(float(col - 2) * STATION_STEP_X, 0.0, (float(row) - 0.5) * STATION_STEP_Z)

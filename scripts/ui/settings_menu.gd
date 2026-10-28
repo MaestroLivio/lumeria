@@ -256,14 +256,12 @@ func _build_access() -> void:
 	s.add_child(UIKit.body("La modalità guidata mostra un suggerimento in più dopo ogni tentativo. Nessuna penalità: si può sempre riprovare.", 16))
 
 func _build_camera() -> void:
-	var s := _section("Camera", "La camera segue l'avatar e può essere ruotata con lo stick destro o con il mouse.")
-	_slider(s, "camera_sensitivity", "Sensibilità camera", 0.4, 2.0, 0.1, "×")
-	_cycle(s, "camera_mode", "Tipo di camera", ["Segui", "Orbita libera"], ["follow", "orbit"])
-	_toggle(s, "invert_y", "Inverti asse verticale")
-	_toggle(s, "auto_recenter", "Ricentra dolcemente")
-	_toggle(s, "assisted_camera", "Camera facilitata")
-	s.add_child(UIKit.body("Con la camera facilitata, durante le missioni la camera segue dolcemente il personaggio e mantiene il tavolo inquadrato.", 16))
-	s.add_child(UIKit.body("La camera non entra mai nei muri: usa un braccio elastico con collisione.", 16))
+	var s := _section("Camera", "Scegli come guardare il mondo. Puoi cambiare quando vuoi, anche in mezzo al gioco.")
+	_cycle(s, "camera_view", "Visuale", ["Terza persona", "Soggettiva"], ["third", "first"])
+	_toggle(s, "camera_assist", "Camera facilitata (solo terza persona)")
+	s.add_child(UIKit.body("In soggettiva il personaggio non si vede: la camera guarda il mondo dai suoi occhi. Lo stick destro (o il mouse trascinato) guarda intorno.", 16))
+	s.add_child(UIKit.body("Con la camera facilitata, in terza persona la camera si sposta da sola dietro il personaggio mentre cammina: si gioca con il solo stick sinistro.", 16))
+	s.add_child(UIKit.body("Tasto V o clic dello stick destro: cambia visuale al volo. La camera non entra mai nei muri né dentro il personaggio.", 16))
 
 func _build_controls() -> void:
 	var s := _section("Comandi", "Gamepad consigliato. Tastiera e mouse funzionano sempre.")

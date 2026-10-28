@@ -98,12 +98,12 @@
       "hints": [
         "Tre oggetti sono foglie. Uno non lo è.",
         "Guarda la forma: la conchiglia non è una foglia.",
-        "Metti la conchiglia in DIVERSO e tutte e tre le foglie nella cesta."
+        "Metti la conchiglia in DIVERSA e tutte e tre le foglie nella cesta."
       ],
       "id": "004",
-      "instruction": "Metti la conchiglia nella pedana DIVERSO, poi porta le tre foglie nella cesta.",
+      "instruction": "Metti la conchiglia nella pedana DIVERSA, poi porta le tre foglie nella cesta.",
       "sockets": [
-        "DIVERSO"
+        "DIVERSA"
       ],
       "success": "La conchiglia è diversa, le foglie sono tutte insieme. Una farfalla è arrivata!",
       "title": "Le foglie differenti"
@@ -119,11 +119,11 @@
       ],
       "hints": [
         "Alcuni oggetti si mangiano, altri si usano per giocare.",
-        "Mela, pera e banana sono cibo. Palla, trottola e trenino sono giochi.",
-        "Metti i tre cibi nel cesto CIBO e i tre giochi nel cesto GIOCO."
+        "Mela, pera e banana sono cibo. Palla, trottola e trenino sono giocattoli.",
+        "Metti i tre cibi nel cesto CIBO e i tre giocattoli nel cesto GIOCATTOLI."
       ],
       "id": "005",
-      "instruction": "Metti il cibo nel cesto CIBO e i giochi nel cesto GIOCO.",
+      "instruction": "Metti il cibo nel cesto CIBO e i giocattoli nel cesto GIOCATTOLI.",
       "sockets": [],
       "success": "Hai diviso il cibo dai giochi: tre e tre!",
       "title": "I due cestini"

@@ -584,6 +584,11 @@ func _build_board() -> void:
 	_shuffle_order(cube_order, _mission_rng("cubes"))
 	_board_w = float(grid["width"]) * 1.6 + 1.2
 	_board_depth = float(rows) * 1.6 + 1.1
+	var basket_mode := bool(grid.get("baskets", false))
+	if basket_mode:
+		# Le due piattaforme circolari hanno bisogno di spazio dietro per il
+		# cartello con l'immagine che spiega cosa ci va dentro.
+		_board_depth = 4.4
 	var board_z := 0.0
 
 	MeshHelpers.cylinder(_board_root, 1.5, 1.7, 0.55, Color("#D8C3A5"), Vector3(0, 0.28, 0), Vector3.ZERO,
@@ -593,6 +598,8 @@ func _build_board() -> void:
 	MeshHelpers.box(_board_root, Vector3(_board_w, 0.1, _board_depth), Color("#EBD9B8"),
 		Vector3(0, 0.72, board_z))
 	_board_frame(_board_w, _board_depth, 0.778)
+	if basket_mode:
+		_build_basket_platforms()
 
 	# Vetrina degli oggetti da contare / mappa del percorso, accanto alla tavola.
 	var display: Array = mission.get("display", [])
@@ -768,6 +775,71 @@ func _shuffle_order(order: Array[int], rng: RandomNumberGenerator) -> void:
 			order[i] = order[i + 1]
 		order[order.size() - 1] = first
 
+## Riconosce la missione delle due ceste: tre incastri per il cibo e tre per i
+## giocattoli. Serve a dare a ogni cesto la sua piattaforma riconoscibile
+## invece di due file indistinguibili sulla stessa tavola.
+func _basket_layout() -> Dictionary:
+	var sockets: Array = mission.get("sockets", [])
+	if sockets.size() != 6:
+		return {}
+	var groups := {"cibo": [], "gioco": []}
+	for s in sockets:
+		if not (s is Dictionary):
+			return {}
+		var g := str(s.get("group", ""))
+		if not groups.has(g):
+			return {}
+		(groups[g] as Array).append(s)
+	if (groups["cibo"] as Array).size() != 3 or (groups["gioco"] as Array).size() != 3:
+		return {}
+	return groups
+
+## Due grappoli di tre incastri, uno a sinistra (cibo) e uno a destra
+## (giocattoli), ognuno dentro la propria piattaforma circolare.
+func _basket_cells(sockets: Array) -> Array:
+	var layout := _basket_layout()
+	var cells: Array[Vector2] = []
+	cells.resize(sockets.size())
+	cells.fill(Vector2.ZERO)
+	var offsets := [Vector2(0.0, -0.55), Vector2(-0.48, 0.28), Vector2(0.48, 0.28)]
+	for side in ["cibo", "gioco"]:
+		var cx := -1.1875 if side == "cibo" else 1.1875
+		var group: Array = layout[side]
+		for i in range(group.size()):
+			var idx := sockets.find(group[i])
+			if idx < 0:
+				idx = i
+			cells[idx] = Vector2(cx, 0.0) + offsets[i]
+	return cells
+
+## Due piattaforme rotonde, di colore diverso, con un cartello illustrato:
+## un piatto e le posate per il CIBO, una palla e una stella per i GIOCATTOLI.
+func _build_basket_platforms() -> void:
+	var accents := {"cibo": Color("#E8A65A"), "gioco": Color("#7E8CD6")}
+	var icons := {"cibo": "cibo", "gioco": "gioco"}
+	var labels := {"cibo": "CIBO", "gioco": "GIOCATTOLI"}
+	for side in ["cibo", "gioco"]:
+		var cx := -1.90 if side == "cibo" else 1.90
+		var accent: Color = accents[side]
+		# Piattaforma circolare: bordo scuro, superficie chiara, anello colorato.
+		MeshHelpers.cylinder(_board_root, 1.84, 1.90, 0.09, accent.darkened(0.18),
+			Vector3(cx, 0.75, 0.0), Vector3.ZERO, Color(0, 0, 0, 0), 0.0, 40)
+		MeshHelpers.cylinder(_board_root, 1.72, 1.76, 0.05, accent.lightened(0.40),
+			Vector3(cx, 0.80, 0.0), Vector3.ZERO, Color(0, 0, 0, 0), 0.0, 40)
+		MeshHelpers.torus(_board_root, 1.72, 1.86, accent, Vector3(cx, 0.795, 0.0),
+			Vector3.ZERO, accent, 0.30)
+		# Cartello illustrato dietro la piattaforma, rivolto verso la camera.
+		MeshHelpers.cylinder(_board_root, 0.06, 0.08, 0.72, accent.darkened(0.32),
+			Vector3(cx, 1.08, -2.02))
+		MeshHelpers.box(_board_root, Vector3(2.16, 0.86, 0.08), accent.darkened(0.22),
+			Vector3(cx, 1.62, -2.02))
+		MeshHelpers.box(_board_root, Vector3(1.98, 0.70, 0.05), Color("#FFF7E8"),
+			Vector3(cx, 1.62, -1.972))
+		MeshHelpers.icon(_board_root, icons[side], accent.darkened(0.06), 0.62,
+			Vector3(cx - 0.70, 1.62, -1.945), false)
+		MeshHelpers.label(_board_root, labels[side], 38, Color("#3B2A20"),
+			Vector3(cx + 0.24, 1.62, -1.945), 56, false)
+
 ## Disposizione degli incastri: rispetta l'ordine dei dati.
 ## - incastri con gruppi: una fila per gruppo (aiuole, case, cesti);
 ## - sequenze, percorsi, serie: una sola fila, come si legge;
@@ -777,6 +849,8 @@ func _socket_grid(sockets: Array) -> Dictionary:
 	var cells: Array[Vector2] = []
 	if n <= 0:
 		return {"cells": cells, "rows": 1, "width": 1}
+	if not _basket_layout().is_empty():
+		return {"cells": _basket_cells(sockets), "rows": 1, "width": 4, "baskets": true}
 	var all_grouped := true
 	var group_order: Array[String] = []
 	var group_sizes := {}
@@ -1947,6 +2021,14 @@ func _show_success() -> void:
 	_hide_cube_preview()
 	_overlay_open = true
 	_success_layer.visible = true
+	# Festa per la pietra appena accesa: fanfara e coriandoli.
+	Audio.play_sfx("fanfare")
+	var old_confetti := _success_layer.get_node_or_null("Coriandoli")
+	if old_confetti:
+		old_confetti.queue_free()
+	var confetti := Confetti.new()
+	confetti.name = "Coriandoli"
+	_success_layer.add_child(confetti)
 	var last := int(str(mission.get("id", "100")))
 	_success_next.visible = not lab_mode and last < 100
 	var title := "Pietra magica accesa!"
@@ -2036,7 +2118,7 @@ func _update_camera(delta: float) -> void:
 		return
 	var focus := _camera_target
 	var zoom := 1.0
-	if _has_moved and _avatar != null and bool(Settings.get_setting("assisted_camera", true)):
+	if _has_moved and _avatar != null and bool(Settings.get_setting("camera_assist", true)):
 		var off := _avatar.position - _camera_target
 		off.y = 0.0
 		focus += Vector3(clampf(off.x * 0.55, -2.4, 2.4), 0.0,

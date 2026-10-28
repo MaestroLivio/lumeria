@@ -242,6 +242,8 @@ func _make_sfx(n: String) -> AudioStream:
 			return _chirp_stream([392.0, 329.63, 261.63], 0.18, 0.32)
 		"success":
 			return _chirp_stream([523.25, 659.25, 783.99, 1046.5, 1318.5], 0.2, 0.6)
+		"fanfare":
+			return _fanfare_stream()
 		"click":
 			return _tone_stream(760.0, 720.0, 0.055, 0.35, 0.15)
 		"back":
@@ -294,6 +296,44 @@ func _chirp_stream(freqs: Array, dur_each: float, amp: float) -> AudioStreamWAV:
 		offset += int(dur_each * 0.72 * SAMPLE_RATE)
 	return _to_wav(buf)
 
+## Fanfara di vittoria: arpeggio rapido e accordo che tiene, per festeggiare
+## ogni pietra appena accesa.
+func _fanfare_stream() -> AudioStreamWAV:
+	var buf := _silence(int(1.6 * SAMPLE_RATE))
+	for f in [523.25, 659.25, 783.99]:
+		_add_note(buf, float(f), 0.0, 0.34, 0.22, 5.0)
+	for f in [523.25, 659.25, 783.99, 1046.50]:
+		_add_note(buf, float(f), 0.26, 1.15, 0.15, 2.0)
+	_add_note(buf, 1567.98, 0.26, 0.85, 0.09, 2.6)
+	return _to_wav(buf)
+
+## Aggiunge una nota a un buffer già allocato. Lavorare nota per nota evita di
+## ripassare ogni campione per ogni accordo: la colonna sonora si genera in
+## un attimo senza bloccare l'avvio.
+func _add_note(buf: PackedFloat32Array, freq: float, start: float, dur: float, amp: float,
+		decay: float = 6.0, wave: float = 0.0) -> void:
+	var first := maxi(0, int(start * SAMPLE_RATE))
+	var count := int(dur * SAMPLE_RATE)
+	var limit := mini(buf.size(), first + count)
+	for i in range(first, limit):
+		var t := float(i - first) / float(SAMPLE_RATE)
+		var env := minf(1.0, t / 0.010) * exp(-t * decay)
+		env *= clampf((dur - t) / 0.06, 0.0, 1.0)
+		var s := sin(TAU * freq * t)
+		if wave > 0.0:
+			s = lerpf(s, sin(TAU * freq * 2.0 * t) * 0.35 + s * 0.65, wave)
+		buf[i] += s * env * amp
+
+## Breve fruscio ritmico: dà il passo alla musica senza strumenti campionati.
+func _add_noise(buf: PackedFloat32Array, start: float, dur: float, amp: float) -> void:
+	var first := maxi(0, int(start * SAMPLE_RATE))
+	var count := int(dur * SAMPLE_RATE)
+	var limit := mini(buf.size(), first + count)
+	for i in range(first, limit):
+		var t := float(i - first) / float(SAMPLE_RATE)
+		var env := exp(-t * 58.0) * minf(1.0, t / 0.004)
+		buf[i] += _rng.randf_range(-1.0, 1.0) * env * amp
+
 func _tone_stream(f0: float, f1: float, dur: float, amp: float, decay: float) -> AudioStreamWAV:
 	var n := int(dur * SAMPLE_RATE)
 	var buf := _silence(n)
@@ -345,37 +385,58 @@ func _build_music() -> void:
 	if not bool(Settings.get_setting("music_muted", false)):
 		_music.play()
 
+## Colonna sonora di sedici secondi: otto battute a 120 BPM, giro luminoso
+## Do–Sol–Lam–Fa, basso che saltella, arpeggio di ottavi, melodia pentatonica e
+## un fruscio leggero sui tempi deboli. Allegra, ma senza mai coprire la voce.
 func _make_music() -> AudioStreamWAV:
 	var n := int(MUSIC_LEN * SAMPLE_RATE)
 	var buf := _silence(n)
-	# Quattro accordi morbidi di 4 secondi, arpeggio pentatonico discreto.
+	var bar := MUSIC_LEN / 8.0
+	var beat := bar * 0.25
+	var chord_of: Array[int] = [0, 1, 2, 3, 0, 1, 3, 1]
 	var chords: Array = [
-		[130.81, 164.81, 196.00, 246.94],  # Cmaj7
-		[110.00, 130.81, 164.81, 196.00],  # Am7
-		[87.31, 110.00, 130.81, 164.81],   # Fmaj7
-		[98.00, 123.47, 146.83, 164.81],   # G
+		[261.63, 329.63, 392.00, 523.25],  # Do
+		[246.94, 293.66, 392.00, 493.88],  # Sol
+		[220.00, 261.63, 329.63, 440.00],  # La minore
+		[174.61, 220.00, 261.63, 349.23],  # Fa
 	]
-	var chord_len := MUSIC_LEN / 4.0
-	for c in range(4):
-		var start := int(float(c) * chord_len * SAMPLE_RATE)
-		var count := int(chord_len * SAMPLE_RATE)
-		var chord: Array = chords[c]
-		for i in range(count):
-			var t := float(i) / float(SAMPLE_RATE)
-			var gt := float(c) * chord_len + t
-			var env := minf(1.0, t / 0.7) * minf(1.0, (chord_len - t) / 0.7)
-			var s := 0.0
-			for f in chord:
-				s += sin(TAU * float(f) * gt + float(f) * 0.02)
-			s *= 0.011 * env
-			# arpeggio: una nota ogni due secondi
-			var idx := int(t / 2.0)
-			var local := t - float(idx) * 2.0
-			var notes: Array = [523.25, 659.25, 783.99, 880.00, 1046.50]
-			var nf: float = notes[(idx * 2 + c) % notes.size()]
-			var na := exp(-local * 1.1) * 0.028 * minf(1.0, local / 0.08)
-			s += sin(TAU * nf * gt) * na
-			buf[start + i] += s
+	var bass_roots: Array[float] = [130.81, 98.00, 110.00, 87.31]
+	var arp_order: Array[int] = [0, 1, 2, 3, 2, 1, 2, 3]
+	# Melodia di quattro battute, ripetuta: una nota per tempo, -1 = pausa.
+	var melody: Array[int] = [
+		0, 2, 4, -1, 3, 2, 0, -1,
+		2, 4, 5, 4, 2, 0, 2, -1,
+		0, 2, 4, 5, 4, 2, 3, 2,
+		0, -1, 1, 0, -1, -1, -1, -1,
+	]
+	var scale_n: Array[float] = [523.25, 587.33, 659.25, 783.99, 880.00, 1046.50]
+	for b in range(8):
+		var ci: int = chord_of[b]
+		var chord: Array = chords[ci]
+		var start := float(b) * bar
+		# Accordo breve in levare: dà colore senza impastare il resto.
+		for k in range(3):
+			_add_note(buf, float(chord[k]) * 2.0, start, 0.50, 0.032, 4.6)
+		# Basso saltellante: fondamentale, poi quinta.
+		_add_note(buf, float(bass_roots[ci]), start, 0.32, 0.13, 6.0)
+		_add_note(buf, float(bass_roots[ci]), start + beat * 2.0, 0.30, 0.10, 6.5)
+		_add_note(buf, float(bass_roots[ci]) * 1.5, start + beat * 3.0, 0.20, 0.075, 8.0)
+		# Arpeggio di ottavi: il motore ritmico del brano.
+		for k in range(8):
+			var af: float = float(chord[arp_order[k]]) * 2.0
+			_add_note(buf, af, start + beat * 0.5 * float(k), 0.22, 0.042, 9.0, 0.35)
+		# Controcanto acuto, molto leggero.
+		for k in range(4):
+			var hf: float = float(chord[(k + 2) % 4]) * 4.0
+			_add_note(buf, hf, start + beat * float(k) + beat * 0.5, 0.16, 0.020, 12.0)
+		# Melodia.
+		for k in range(4):
+			var mi: int = melody[(b * 4 + k) % melody.size()]
+			if mi >= 0:
+				_add_note(buf, scale_n[mi], start + beat * float(k), 0.40, 0.065, 3.2, 0.25)
+		# Fruscio sui tempi deboli.
+		for k in range(2):
+			_add_noise(buf, start + beat * (0.5 + float(k) * 2.0), 0.05, 0.016)
 	# dissolvenza di 0.8 s ai bordi per un loop pulito
 	var fade := int(0.8 * SAMPLE_RATE)
 	for i in range(fade):
@@ -385,12 +446,14 @@ func _make_music() -> AudioStreamWAV:
 	# riverbero semplice a ritardo
 	var delay := int(0.23 * SAMPLE_RATE)
 	for i in range(delay, n):
-		buf[i] += buf[i - delay] * 0.18
+		buf[i] += buf[i - delay] * 0.16
+	# Livello uniforme: la musica si sente senza dover alzare il volume, ma
+	# resta sotto la voce narrante.
 	var peak := 0.0
 	for i in range(n):
 		peak = maxf(peak, absf(buf[i]))
-	if peak > 0.55:
-		var k := 0.55 / peak
+	if peak > 0.0001:
+		var k2 := 0.32 / peak
 		for i in range(n):
-			buf[i] *= k
+			buf[i] *= k2
 	return _to_wav(buf)

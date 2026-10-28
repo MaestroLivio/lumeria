@@ -38,6 +38,16 @@ static func build(appearance: Dictionary) -> Node3D:
 		# scarpe arrotondate, punta verso -Z
 		var boot := MeshHelpers.sphere(legs, 0.125, shoe, Vector3(0.145 * side, 0.075, -0.035))
 		boot.scale = Vector3(1.0, 0.62, 1.42)
+		# calzino chiaro, suola scura e punta rinforzata: il piede si legge
+		# anche quando il personaggio è piccolo sullo schermo.
+		MeshHelpers.torus(legs, 0.098, 0.116, Color("#FFF7E8"),
+			Vector3(0.145 * side, 0.158, 0))
+		MeshHelpers.box(legs, Vector3(0.17, 0.034, 0.235), shoe.darkened(0.38),
+			Vector3(0.145 * side, 0.021, -0.035))
+		MeshHelpers.sphere(legs, 0.07, shoe.lightened(0.20),
+			Vector3(0.145 * side, 0.062, -0.148))
+		MeshHelpers.torus(legs, 0.104, 0.118, outfit.darkened(0.36),
+			Vector3(0.145 * side, 0.30, 0))
 
 	# ------------------------------------------------------------ corpo e mantello
 	var torso := Node3D.new()
@@ -70,6 +80,16 @@ static func build(appearance: Dictionary) -> Node3D:
 	# mantellina corta sulle spalle
 	MeshHelpers.cylinder(torso, 0.30, 0.40, 0.20, outfit.darkened(0.12), Vector3(0, 1.10, 0), Vector3.ZERO,
 		Color(0, 0, 0, 0), 0.0, 14)
+	# spalle arrotondate, colletto e orlo: la sagoma del busto è più netta.
+	for side in [-1.0, 1.0]:
+		MeshHelpers.sphere(torso, 0.115, outfit.lightened(0.14), Vector3(0.245 * side, 1.05, 0))
+	MeshHelpers.torus(torso, 0.120, 0.160, outfit.lightened(0.34), Vector3(0, 1.125, 0))
+	MeshHelpers.torus(torso, 0.298, 0.334, outfit.darkened(0.24), Vector3(0, 0.555, 0))
+	# tracolla della bisaccia e fibbia: attraversa la tunica e la rende viva.
+	MeshHelpers.box(torso, Vector3(0.072, 0.60, 0.052), Color("#8A6242"),
+		Vector3(0.02, 0.92, -0.303), Vector3(0, 0, deg_to_rad(-26)))
+	MeshHelpers.box(torso, Vector3(0.095, 0.055, 0.05), Color("#F2C24B"),
+		Vector3(0.16, 0.70, -0.305))
 
 	# ------------------------------------------------------------ braccia e mani
 	var arms := Node3D.new()
@@ -80,7 +100,12 @@ static func build(appearance: Dictionary) -> Node3D:
 			Vector3(0.37 * side * width, 0.85, 0))
 		arm.name = "BraccioDestro" if side > 0.0 else "BraccioSinistro"
 		arm.rotation.z = deg_to_rad(9.0 * side)
+		# polsino chiaro e mano con pollice: le braccia finiscono con un gesto.
+		MeshHelpers.torus(arms, 0.072, 0.092, outfit.lightened(0.32),
+			Vector3(0.395 * side * width, 0.663, 0))
 		MeshHelpers.sphere(arms, 0.10, skin, Vector3(0.405 * side * width, 0.60, -0.01))
+		MeshHelpers.sphere(arms, 0.036, skin.darkened(0.04),
+			Vector3(0.462 * side * width, 0.585, -0.052))
 
 	# ------------------------------------------------------------ testa e viso
 	var head := Node3D.new()
@@ -101,6 +126,15 @@ static func build(appearance: Dictionary) -> Node3D:
 	# ciuffi sulla fronte (sopra gli occhi, verso -Z)
 	MeshHelpers.sphere(head, 0.095, hair, Vector3(-0.14, 1.62, -0.15))
 	MeshHelpers.sphere(head, 0.08, hair, Vector3(0.12, 1.64, -0.13))
+	# ciuffi laterali, ciocche sulla fronte e riflesso chiaro: i capelli hanno
+	# una forma riconoscibile invece di una sola calotta.
+	MeshHelpers.sphere(head, 0.088, hair, Vector3(-0.268, 1.455, 0.02))
+	MeshHelpers.sphere(head, 0.088, hair, Vector3(0.268, 1.455, 0.02))
+	MeshHelpers.sphere(head, 0.058, hair, Vector3(-0.055, 1.655, -0.205))
+	MeshHelpers.sphere(head, 0.050, hair, Vector3(0.075, 1.645, -0.195))
+	var glint := MeshHelpers.sphere(head, 0.075, hair.lightened(0.16), Vector3(-0.16, 1.60, -0.10))
+	glint.scale = Vector3(1.1, 0.55, 1.1)
+	glint.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	# guance
 	for side in [-1.0, 1.0]:
 		var cheek := MeshHelpers.sphere(head, 0.062, Color("#F08C7A"), Vector3(0.185 * side, 1.30, -0.225))
